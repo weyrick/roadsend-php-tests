@@ -5,8 +5,14 @@
 
 all: re-tests
 
+re-tests-i:
+	pcc -f ./dotest.php -- -d ./re-tests/ ./re-output
+
 re-tests: dotest
-	PCC_CONF="./pcc-test.conf" ./dotest -d ./re-tests/
+	./dotest -d ./re-tests/ ./re-output
+
+zend-tests: dotest
+	./dotest -d ./zend-tests/ ./zend-output
 
 dotest: dotest.php
 	pcc dotest.php

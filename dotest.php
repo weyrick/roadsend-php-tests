@@ -29,6 +29,7 @@ class Control {
     static public $verbosity = 1;
     static public $pccBinary;
     static public $pccVersion;
+    static public $outDir;
     
     public static function log($level, $msg) {
         if (self::$verbosity >= $level)
@@ -67,7 +68,7 @@ class TestSuite {
     
     public function usage() {
         echo "Roadsend PHP Test Suite\n";
-        echo "dotest [-dfl] <directory or file>\n";
+        echo "dotest [-dfl] <directory or file> [output directory]\n";
         echo "  -d <path>\t\tRun all tests in the specified root directory\n";
         echo "  -f <file>\t\tRun the single test specified\n";
         echo "  -l <file>\t\tRun all tests listed in the specified file\n";
@@ -115,10 +116,17 @@ class TestSuite {
                break;
         }
 
+        Control::$outDir = $GLOBALS['argv'][3];
+        if (!is_dir(Control::$outDir))
+            Control::bomb('output directory is invalid: '.Control::$outDir);
+        if (substr(Control::$outDir,-1) != DIRECTORY_SEPARATOR)
+            Control::$outDir .= DIRECTORY_SEPARATOR;
        
         Control::log(1,sizeof($this->testList).' total tests');
         foreach ($this->testList as $testH) {
             $testH->runTest();
+            //XXX
+            break;
         }
 
     }
@@ -127,31 +135,41 @@ class TestSuite {
 
 class PHP_Test {
 
-    protected $fileName;
+    const RESULT_PASS = 0;
+    const RESULT_FAIL = 1;
+    const RESULT_SKIP = 2;
+    const RESULT_UNKNOWN = 3;
+    
+    protected $tptFileName;
+    protected $testFileName;
+    
     protected $templateData;
     protected $sectionData;
     
+    public $compileResult = self::RESULT_UNKNOWN;
+    public $interpetResult = self::RESULT_UNKNOWN;
+    
     public function __construct($fName) {
         Control::log(2,'adding test: '.$fName);
-        $this->fileName = $fName;
+        $this->tptFileName = $fName;
     }
 
     protected function parseTest() {
 
-        $this->templateData = file($this->fileName);
+        $this->templateData = file($this->tptFileName);
         if (empty($this->templateData))
-            Control::bomb('unable to load test: '.$this->fileName);
+            Control::bomb('unable to load test: '.$this->tptFileName);
 
         $curSection = '';
         for ($i=0; $i <= sizeof($this->templateData); $i++) {
             $line = $this->templateData[$i];
             if (preg_match('/^--([A-Z]+)--/',$line,$m)) {
-                $curSection = $m[1];
+                $curSection = strtoupper($m[1]);
                 continue;
             }
             else {
                 if (empty($curSection))
-                    Control::bomb($this->fileName.':'.($i+1).' - template parse error');
+                    Control::bomb(($i+1).' - template parse error');
                 else {
                     if ($curSection == 'TEST')
                         $line = trim($line);
@@ -159,14 +177,39 @@ class PHP_Test {
                 }
             }
         }
-        var_dump($this->sectionData);
+
+        // verify we have code to write
+        if (empty($this->sectionData['FILE']))
+            Control::bomb('Invalid test template: no FILE section');
+
+        // work files
+        $this->testFileName = Control::$outdir.basename($this->tptFileName, '.phpt').'.php';
+        
     }
-     
+
+    protected function bomb($msg) {
+        Control::bomb($this->tptFileName.': '.$msg);
+    }
+    
+    protected function writeTest() {
+        
+        if (!file_put_contents($this->testFileName, $this->sectionData['FILE']))
+            Control::bomb("unable to write .php test file (FILE section)");
+        
+    }
+    
     public function runTest() {
 
         $this->parseTest();
+
+        // XXX do skip check
+
+        // write test
+        $this->writeTest();
         
-        echo basename($this->fileName).":\n";
+        // do interpret test
+        
+        echo basename($this->tptFileName).":\n";
         
     }
     
