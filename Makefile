@@ -8,6 +8,9 @@ all: re-tests
 re-tests-i:
 	pcc -f ./dotest.php -- -d ./re-tests/ ./re-output
 
+re-tests-z:
+	php -f ./dotest.php -- -d ./re-tests/ ./re-output
+
 re-tests: dotest
 	./dotest -d ./re-tests/ ./re-output
 

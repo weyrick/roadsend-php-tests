@@ -124,11 +124,19 @@ class TestSuite {
        
         Control::log(1,sizeof($this->testList).' total tests');
         foreach ($this->testList as $testH) {
+            echo basename($testH->tptFileName).': ';
             $testH->runTest();
+            if ($testH->interpetResult == PHP_Test::RESULT_PASS) {
+                echo "INTERPRETER: PASS\n";
+            }
+            else {
+                echo "INTERPRETER: FAIL\n";
+            }
+            echo "\n";
             //XXX
-            break;
+            //break;
         }
-
+        
     }
 
 }
@@ -140,8 +148,16 @@ class PHP_Test {
     const RESULT_SKIP = 2;
     const RESULT_UNKNOWN = 3;
     
-    protected $tptFileName;
+    public $tptFileName;
     protected $testFileName;
+    protected $ioutFileName; // interpreted output
+    protected $coutFileName; // compiled output
+    protected $expectFileName;
+    protected $idiffFileName;
+    protected $cdiffFileName;
+    
+    protected $iOutput;
+    protected $cOutput;
     
     protected $templateData;
     protected $sectionData;
@@ -183,7 +199,13 @@ class PHP_Test {
             Control::bomb('Invalid test template: no FILE section');
 
         // work files
-        $this->testFileName = Control::$outdir.basename($this->tptFileName, '.phpt').'.php';
+        $bName = Control::$outDir.basename($this->tptFileName, '.phpt');
+        $this->testFileName = $bName.'.php';
+        $this->expectFileName = $bName.'.expect';
+        $this->ioutFileName = $bName.'.i.out';
+        $this->coutFileName = $bName.'.c.out';
+        $this->idiffFileName = $bName.'.i.diff';
+        $this->cdiffFileName = $bName.'.c.diff';
         
     }
 
@@ -194,12 +216,48 @@ class PHP_Test {
     protected function writeTest() {
         
         if (!file_put_contents($this->testFileName, $this->sectionData['FILE']))
-            Control::bomb("unable to write .php test file (FILE section)");
+            Control::bomb("unable to write .php test file (FILE section): ".$this->testFileName);
+        
+        if (!file_put_contents($this->expectFileName, $this->sectionData['EXPECTF']))
+            Control::bomb("unable to write expect test file (EXPECTF section): ".$this->expectFileName);
+        
+    }
+
+    protected function doInterpreterTest() {
+
+        $cmd = Control::$pccBinary.' -f '.$this->testFileName;
+        Control::log(2, $cmd);
+        $this->iOutput = `$cmd`;
+        
+        if (!file_put_contents($this->ioutFileName, $this->iOutput))
+            Control::bomb("unable to write interpreter output file".$this->ioutFileName);
+
+        if ($this->iOutput != $this->sectionData['EXPECTF']) {
+            $this->interpetResult = self::RESULT_FAIL;
+        }
+        else {
+            $this->interpetResult = self::RESULT_PASS;
+        }
+        
+    }
+
+    protected function writeInterpreterDiff() {
+
+        $cmd = 'diff '.$this->expectFileName.' '.$this->ioutFileName;
+        Control::log(2, $cmd);
+        $op = `$cmd`;
+        file_put_contents($this->idiffFileName, $op);
         
     }
     
-    public function runTest() {
+    protected function doCompilerTest() {
 
+
+    }
+
+    
+    public function runTest() {
+        
         $this->parseTest();
 
         // XXX do skip check
@@ -207,9 +265,17 @@ class PHP_Test {
         // write test
         $this->writeTest();
         
-        // do interpret test
+        // do interpreter test
+        $this->doInterpreterTest();
+
+        if ($this->interpetResult == self::RESULT_FAIL)
+            $this->writeInterpreterDiff();
+
+        // do compiled test
+        if (defined('ROADSEND_PHP')) {
+            $this->doCompilerTest();
+        }
         
-        echo basename($this->tptFileName).":\n";
         
     }
     
