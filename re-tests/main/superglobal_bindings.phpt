@@ -25,6 +25,5 @@ echo $bar;
 
 ?>
 
-
---EXPECTF--
+--EXPECT--
 5675

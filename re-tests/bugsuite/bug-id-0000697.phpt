@@ -25,7 +25,7 @@ myfun();
 
 
 ?>
---EXPECTF--
+--EXPECT--
 Bug# 0000697
 
 default function parameters should accept undefined tokens for default values

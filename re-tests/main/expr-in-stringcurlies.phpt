@@ -15,7 +15,7 @@ print "property is : ${bar[print 'another print']}\n";
 
 var_dump(print('asdfasdfasdf'));
 ?>
---EXPECTF--
+--EXPECT--
 The {$ ... } construct now allows general expressions in some cases.  
 ${ ... } in some too, but not as many (??)
 asdfproperty is : value

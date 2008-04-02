@@ -44,7 +44,7 @@ define("SF_LAYOUT_UNDEFINED2", 200);
 echo SF_LAYOUT_UNDEFINED2."\n";
 
 ?>
---EXPECTF--
+--EXPECT--
 constant as default argument for function parameter
 
 the following breaks in the parser:

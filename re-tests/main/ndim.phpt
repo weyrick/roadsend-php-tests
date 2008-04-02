@@ -58,7 +58,7 @@ print_r($files);
 
 
 ?>
---EXPECTF--
+--EXPECT--
 foo Array[0]
 foo
 Array[0][0]

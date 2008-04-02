@@ -18,7 +18,7 @@ $j = $j * 1001;
 var_dump($i,$j);
 
 ?>
---EXPECTF--
+--EXPECT--
 int(10000000)
 int(10010000000)
 int(10000000)

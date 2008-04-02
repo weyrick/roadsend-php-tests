@@ -46,8 +46,7 @@ echo "\n\$foo\n";
 echo "\n\{$foo}\n"; 
 echo "\n\${foo}\n"; 
 ?>
-
---EXPECTF--
+--EXPECT--
 a few 
 a few mmm, mmm, goods
 a few mmm, mmm, goods

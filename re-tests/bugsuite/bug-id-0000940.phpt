@@ -23,6 +23,6 @@ var_dump($ts);
 
 
 ?>
---EXPECTF--
+--EXPECT--
 erroneous conversion of string to array
 tgtstring(11) "test string"

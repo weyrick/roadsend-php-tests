@@ -39,7 +39,7 @@ function foo_with_args($a, $b)
 foo_with_args(1,2);
 
 ?>
---EXPECTF--
+--EXPECT--
 correct -- Number of arguments: 2<br />
 0Second argument is: 2<br />
 Number of arguments: 3<br />

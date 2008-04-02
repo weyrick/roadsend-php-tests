@@ -37,7 +37,7 @@ echo "$aninstance->SfFilter\n";
 
 
 ?>
---EXPECTF--
+--EXPECT--
 0000734 parse error on empty conditional block
 
 

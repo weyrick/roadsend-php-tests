@@ -15,9 +15,6 @@ else
 
 
 ?>
-
---EXPECTF--
+--EXPECT--
 bar
-
-Warning: Wrong parameter count for function_exists() in /home/weyrick/workspace/pcc/bugs/tests/bug-id-0002248.php on line 8
 bar

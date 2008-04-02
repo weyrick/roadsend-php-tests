@@ -14,6 +14,5 @@ echo("failed: <$ui1> <$ui2>\n");
 }
 
 ?>
-
---EXPECTF--
+--EXPECT--
 Testing uniqid: passed

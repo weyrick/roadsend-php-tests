@@ -44,8 +44,7 @@ print("Cloned Object:\n");
 print_r($obj2);
 
 ?> 
-
---EXPECTF--
+--EXPECT--
 Original Object:
 MyCloneable Object
 (

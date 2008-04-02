@@ -60,8 +60,7 @@ endforeach;
 echo "\n";
 
 ?>
-
---EXPECTF--
+--EXPECT--
 foocow
 abcd
 abcd

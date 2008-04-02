@@ -172,7 +172,7 @@ var_dump( NULL );
 
 
 ?>
---EXPECTF--
+--EXPECT--
 Four scalar types:
 ***   boolean   ***
 bool(false)

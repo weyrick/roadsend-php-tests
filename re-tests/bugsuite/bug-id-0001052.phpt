@@ -14,7 +14,7 @@ $a = new aclass();
 $a->afunc();
 
 ?>
---EXPECTF--
+--EXPECT--
 1 file is /home/weyrick/workspace/pcc/bugs/tests/bug-id-0001052.php
 2 file is /home/weyrick/workspace/pcc/bugs/tests/1052-2.inc
 3 file is /home/weyrick/workspace/pcc/bugs/tests/1052-3.inc

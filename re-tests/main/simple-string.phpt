@@ -13,6 +13,5 @@ echo "$foo[1] $foo[$zot]";
 echo "$zot $zot";
 
 ?>
-
---EXPECTF--
+--EXPECT--
 2 12 2

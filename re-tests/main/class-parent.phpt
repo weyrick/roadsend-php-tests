@@ -69,7 +69,7 @@ echo "interface_exists?".interface_exists('bar',false)."\n";
 echo "interface_exists?".interface_exists('baz',false)."\n";
 
 ?>
---EXPECTF--
+--EXPECT--
 This is foo in foo.  Static method invocations can't count on properties, so no zot.
 This is foo in foo.  Static method invocations can't count on properties, so no zot.
 This is foo in foo.  Static method invocations can't count on properties, so no zot.

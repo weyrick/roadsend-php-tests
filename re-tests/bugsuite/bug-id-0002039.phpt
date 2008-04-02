@@ -83,8 +83,7 @@ if ($a === $b) {
 
 ?>
 
-
---EXPECTF--
+--EXPECT--
 0002039: === isn't properly checking types when comparing hashes 
 
 the "identicalp" operator has to check the types of

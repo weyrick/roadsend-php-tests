@@ -25,7 +25,7 @@ zot("one", 2);
 print_r(array(42));
 
 ?>
---EXPECTF--
+--EXPECT--
 $a one, $b 2
 Array
 (

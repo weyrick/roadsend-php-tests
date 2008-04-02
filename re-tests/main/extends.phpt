@@ -60,7 +60,7 @@ $agrandchild->arith_op(1, 2);
 
 
 ?>
---EXPECTF--
+--EXPECT--
 base boogey woogey
 a method in base
 base adds 1 and 2, to get: 3

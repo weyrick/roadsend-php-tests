@@ -17,8 +17,7 @@ echo "hi\n";
 
 ?>
 down here
-
---EXPECTF--
+--EXPECT--
 failure to compile on return in global context
 up here
 42

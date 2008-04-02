@@ -31,8 +31,7 @@ $afoo->makeOne();
 
 ?>
  	
-
---EXPECTF--
+--EXPECT--
 
 0000727 
 

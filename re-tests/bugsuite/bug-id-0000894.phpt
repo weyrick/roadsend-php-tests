@@ -17,7 +17,7 @@ $c->blah();
 echo $c->default;
 
 ?>
---EXPECTF--
+--EXPECT--
 parse error on class variable named 'default'
 
 meep

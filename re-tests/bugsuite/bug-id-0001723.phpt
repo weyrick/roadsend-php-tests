@@ -22,6 +22,6 @@ if(isset($foo)) {
 }
 
 ?>
---EXPECTF--
+--EXPECT--
 compiled code is mutating arrays on n-dimensional access:
 

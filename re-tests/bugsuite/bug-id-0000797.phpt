@@ -11,6 +11,5 @@ class testClass {
 
 ?>
 
-
---EXPECTF--
+--EXPECT--
 

@@ -13,7 +13,6 @@ if($a < Test($a)):
 	$a++;
 endif?>
 
-
---EXPECTF--
+--EXPECT--
 1
 

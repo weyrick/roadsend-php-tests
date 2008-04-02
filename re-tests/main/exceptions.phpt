@@ -63,8 +63,7 @@ function func() {
 }
 
 ?>
-
---EXPECTF--
+--EXPECT--
 0.2
 Caught exception: Division by zero.
 Hello WorldCaught other exception 2caught an exception

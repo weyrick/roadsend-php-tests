@@ -8,7 +8,7 @@ foreach($input AS $i) {
     printf("%d - %u\n", crc32($i), crc32($i));
 }
 ?>
---EXPECTF--
+--EXPECT--
 2356372769
 2356372769 - 2356372769
 1996459178

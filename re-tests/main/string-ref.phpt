@@ -13,5 +13,5 @@ $bar{0} = foo();
 echo $bar{0} . $bar{1} . $bar{2};
 
 ?>
---EXPECTF--
+--EXPECT--
 foo

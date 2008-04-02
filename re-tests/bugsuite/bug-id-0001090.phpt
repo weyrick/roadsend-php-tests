@@ -21,7 +21,7 @@ is currently parsed like this:
 needs to be like this:
 ((($t != '') && $m) ? 'yes' : 'no')
 */
---EXPECTF--
+--EXPECT--
 precedence problem with ugly if operator
 
 answer is no <-- yeah

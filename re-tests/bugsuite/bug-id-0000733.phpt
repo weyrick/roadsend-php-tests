@@ -16,7 +16,7 @@ class aclass {
 $zot = new aclass();
 
 ?>
---EXPECTF--
+--EXPECT--
 0000733 parse error on class property named $parent
 
 12

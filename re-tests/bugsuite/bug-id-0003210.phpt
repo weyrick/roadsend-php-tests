@@ -22,8 +22,7 @@ $bar['key'] = 'value';
 var_dump($bar);
 
 ?>
-
---EXPECTF--
+--EXPECT--
 I dunno if this changed or what, but we just complain about "Cannot use a scalar value as an array", and php bashes it to an array. Test:
 
 object(Foo)#1 (1) {

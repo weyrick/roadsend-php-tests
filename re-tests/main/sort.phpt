@@ -13,8 +13,7 @@ while (list ($key, $val) = each ($fruits)) {
 
 ?>
 
-
---EXPECTF--
+--EXPECT--
 Array
 (
     [0] => lemon

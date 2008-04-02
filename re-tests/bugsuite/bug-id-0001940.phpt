@@ -23,7 +23,7 @@ echo define("FOO", 3);
 echo ", " . FOO . "\n";
 
 ?>
---EXPECTF--
+--EXPECT--
 define() inside of an ugly-then produces a parse error
 
 

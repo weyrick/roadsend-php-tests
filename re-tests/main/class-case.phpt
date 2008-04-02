@@ -18,7 +18,7 @@ $b = get_class_methods($a);
 var_dump($b);
 
 ?>
---EXPECTF--
+--EXPECT--
 object(TeSt)#1 (1) {
   ["BaZBiP"]=>
   string(3) "yes"

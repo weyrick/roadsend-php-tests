@@ -7,6 +7,5 @@ $s = 'hello';
 echo "thus should be 'hello' --> '$s'\n";
 
 ?>
-
---EXPECTF--
+--EXPECT--
 thus should be 'hello' --> 'hello'

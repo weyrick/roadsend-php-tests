@@ -16,7 +16,7 @@ var_dump(strcspn($a,$b,9));
 var_dump(strcspn($a,$b,9,6));
 
 ?>
---EXPECTF--
+--EXPECT--
 string(25) "22222222aaaa bbb1111 cccc"
 string(4) "1234"
 int(8)

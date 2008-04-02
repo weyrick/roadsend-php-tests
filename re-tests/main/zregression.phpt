@@ -20,8 +20,7 @@ if ($time_left>0) {
   echo "Limor Ullmann is now Limor Baruch :I\n";
 }
 ?>
-
---EXPECTF--
+--EXPECT--
 <html>
 <head>
 

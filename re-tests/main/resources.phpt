@@ -15,7 +15,7 @@ echo "and reading: " . $bar[$foo] . "\n";
 
 
 ?>
---EXPECTF--
+--EXPECT--
 Resource id #4
 resource(4) of type (stream)
 

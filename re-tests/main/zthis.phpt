@@ -48,8 +48,7 @@ print_r($names);
 
 
 ?>
-
---EXPECTF--
+--EXPECT--
 FooFooFooFooFooFoosuccess
 the array:
 Array

@@ -4,6 +4,5 @@
 <?php
 print "hello world\n";
 ?>
-
---EXPECTF--
+--EXPECT--
 hello world

@@ -41,7 +41,7 @@ var_dump($test);
 
 
 ?>
---EXPECTF--
+--EXPECT--
 string(11) "bome string"
 array(2) {
   ["user"]=>

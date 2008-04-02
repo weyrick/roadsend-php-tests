@@ -10,7 +10,6 @@
 #
 
 ?>
-
---EXPECTF--
+--EXPECT--
  a parse error is thrown when a # comment is immediately followed by a carriage return.
 

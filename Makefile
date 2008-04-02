@@ -5,25 +5,25 @@
 
 all: re-tests
 
-re-tests-i:
+re-tests-i: clean-output
 	pcc -f ./dotest.php -- -d ./re-tests/ ./re-output
 
-re-tests-z:
+re-tests-z: clean-output
 	php -f ./dotest.php -- -d ./re-tests/ ./re-output
 
-re-tests: dotest
+re-tests: dotest clean-output
 	./dotest -d ./re-tests/ ./re-output
 
-zend-tests: dotest
+zend-tests: dotest clean-output
 	./dotest -d ./zend-tests/ ./zend-output
 
 dotest: dotest.php
 	pcc dotest.php
 
-clean: 
-	-rm `find ./ -name "*.o" -or -name "*.a" -or -name "*.sc[hm]" -or -name "*.so" -or -iname "*.dll" -or -iname "*.heap"`
-	-rm `find ./ -name "*.exp" -or -name "*.out" -or -name "*.rtexp" -or -iname "*.rtout" -or -name "*.diff" -or -name "*.log"`
-	-rm `find ./zend-tests/ -iname "*.php"`
-	-rm `find ./re-tests/ -iname "*.php"`
-	-rm ./php
+clean: clean-output
 
+clean-output:
+	-rm re-output/* zend-output/*
+
+clean-all: clean-output
+	-rm dotest dotest.o *~

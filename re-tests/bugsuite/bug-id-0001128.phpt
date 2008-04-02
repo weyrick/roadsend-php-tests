@@ -14,7 +14,7 @@ echo $registers[2];
 echo "\n";
 
 ?>
---EXPECTF--
+--EXPECT--
 32
 This is a nice and simple string
 is

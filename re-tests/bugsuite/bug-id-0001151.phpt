@@ -17,8 +17,7 @@ print $a{0} . "\n";
 $a[9] = $a{0};
 var_dump($a);
 ?>
-
---EXPECTF--
+--EXPECT--
 0001151 core error
 0 -- 0
 1 -- 1

@@ -20,5 +20,5 @@ $t = new Test;
 
 
 ?>
---EXPECTF--
+--EXPECT--
  success

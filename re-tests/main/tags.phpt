@@ -13,8 +13,7 @@
 <% echo ("You may optionally use ASP-style tags"); %>
 
 <%= $variable; # This is a shortcut for "<% echo . . ." %>
-
---EXPECTF--
+--EXPECT--
 this is the simplest, an SGML processing instruction
 expression This is a shortcut for "expression"
     

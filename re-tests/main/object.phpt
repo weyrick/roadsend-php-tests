@@ -104,8 +104,7 @@ $a->assign();
 print_r($a);
 
 ?>
-
---EXPECTF--
+--EXPECT--
 constructor
 lower: 12, capitalized: this is the capitalized bing
 foo[this is a zot class]you called zot->afun with 19.  bing was 12.
@@ -116,8 +115,6 @@ constructor
 I am the walrus
 constructor 12, foo
 [this is an argconstructor class]you called argconstructor->afun with 12.  bing was 12.
-
-Warning: Missing argument 1 for argconstructor::argconstructor(), called in /home/weyrick/workspace/pcc/tests/object.php on line 78 and defined in /home/weyrick/workspace/pcc/tests/object.php on line 37
 constructor , foo
 constructor 12, foo
 bar Object

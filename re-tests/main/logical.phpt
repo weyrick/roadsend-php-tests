@@ -31,5 +31,5 @@ echo ($a && (!$b || ($a && $d)) || $c);
 // FIXME need 'and', 'or', 'xor'
 
 ?>
---EXPECTF--
+--EXPECT--
 11111

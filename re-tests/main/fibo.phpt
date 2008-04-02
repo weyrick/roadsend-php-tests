@@ -12,6 +12,5 @@ $n = ($argc == 2) ? $argv[1] : 25;
 $r = fibo($n);
 print "$r\n";
 ?>
-
---EXPECTF--
+--EXPECT--
 121393

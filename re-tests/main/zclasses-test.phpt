@@ -66,8 +66,7 @@ print "class vars for Vegetable: " . get_class_vars(get_class($veggie));
 ?>
 </pre>
 
-
---EXPECTF--
+--EXPECT--
 <pre>
 veggie: CLASS Vegetable
 leafy: CLASS Spinach, PARENT Vegetable

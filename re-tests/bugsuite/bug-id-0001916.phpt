@@ -29,7 +29,7 @@ class bar extends foo {
 $bar = new bar();
  
 ?>
---EXPECTF--
+--EXPECT--
 calling foo statically:
 this is set, mem: bar
 calling foo dynamically:

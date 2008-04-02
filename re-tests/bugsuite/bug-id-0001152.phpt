@@ -94,7 +94,7 @@ echo "and bar:\n";
 var_dump($bar);
 
 ?>
---EXPECTF--
+--EXPECT--
 0001152 string assignment problems
 1: string(5) "* *-*"
 2: string(7) "* *-* *"

@@ -26,7 +26,7 @@ print $anobj->amethod() . "\n";
 
 
 ?>
---EXPECTF--
+--EXPECT--
 0001017	need static variables in class methods in interpreter
 
 

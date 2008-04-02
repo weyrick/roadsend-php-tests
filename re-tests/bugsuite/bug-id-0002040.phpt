@@ -54,7 +54,7 @@ function d() {
 echo "done\n";
 
 ?>
---EXPECTF--
+--EXPECT--
 0002040: using == or === on recursive objects and arrays causes a segfault 
 
 the @'s are because in zend php these comparisons cause a fatal error.  we

@@ -25,8 +25,7 @@ $a->runit('akey');
 echo $a->directive['obj']['akey']->str;
 
 ?>
-
---EXPECTF--
+--EXPECT--
 0001024 unable to assign a reference to class property hash if the key doesn't already exist
 
 hi there

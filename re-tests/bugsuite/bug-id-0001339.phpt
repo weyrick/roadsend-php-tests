@@ -34,7 +34,7 @@ $a->afunc();
 
 
 ?>
---EXPECTF--
+--EXPECT--
 working with 1
 working with 2
 working with 3

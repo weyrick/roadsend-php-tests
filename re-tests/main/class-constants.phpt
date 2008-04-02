@@ -17,7 +17,7 @@ $class = new MyClass();
 $class->showConstant();
 
 ?> 
---EXPECTF--
+--EXPECT--
 constant value
 constant value
  

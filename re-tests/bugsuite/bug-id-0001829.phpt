@@ -12,8 +12,7 @@
 
 ?>
 asdf
-
---EXPECTF--
+--EXPECT--
 
 /** 
  * admin/reports/reports.php - Administrator's Sales Performance Data 

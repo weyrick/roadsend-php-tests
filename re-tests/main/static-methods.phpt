@@ -76,8 +76,7 @@ B::callFoo();
 
 ?>
 
-
---EXPECTF--
+--EXPECT--
 in bclass()
 in aclass()
 object(bclass)#1 (2) {

@@ -11,5 +11,5 @@ function afun() {
 afun();
 
 ?>
---EXPECTF--
+--EXPECT--
 lastiteration is 0

@@ -84,8 +84,7 @@ var_dump($obj->a);
 
 ?>
 ===DONE===
-
---EXPECTF--
+--EXPECT--
 array(4) {
   [0]=>
   string(3) "1st"

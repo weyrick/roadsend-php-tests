@@ -11,8 +11,7 @@ echo $c->{$prop} . "\n";
 echo $c->$prop . "\n";
 ?>
 
-
---EXPECTF--
+--EXPECT--
 0000729 access to a class property through variable variable: 
 
 5

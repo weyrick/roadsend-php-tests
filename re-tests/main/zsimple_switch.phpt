@@ -40,6 +40,5 @@ $a=1;
 		break;
   }
 ?>
-
---EXPECTF--
+--EXPECT--
 goodgoodgood

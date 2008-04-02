@@ -6,6 +6,5 @@
 	echo $a;
 	$a++;
   endwhile?>
-
---EXPECTF--
+--EXPECT--
 123456789

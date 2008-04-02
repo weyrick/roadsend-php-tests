@@ -20,6 +20,5 @@ $n = new hi($a);
 
 
 ?>
-
---EXPECTF--
+--EXPECT--
 blah

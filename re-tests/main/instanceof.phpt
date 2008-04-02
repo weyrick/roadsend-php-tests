@@ -52,7 +52,7 @@ var_dump($a instanceof $c); // $c is a string 'MyClass4'
 var_dump($a instanceof $d); // $d is a string 'NotMyClass'
 
 ?>
---EXPECTF--
+--EXPECT--
 bool(true)
 bool(false)
 bool(true)

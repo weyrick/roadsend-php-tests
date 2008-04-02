@@ -50,7 +50,7 @@ echo "\n";
 }
 echo "end\n";
 ?>
---EXPECTF--
+--EXPECT--
 array(0) {
 }
 array(0) {

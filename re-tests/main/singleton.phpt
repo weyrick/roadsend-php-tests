@@ -53,7 +53,6 @@ $test_clone = clone $test;
 
 ?>
 
-
---EXPECTF--
+--EXPECT--
 I am constructedWoof!throw clone error
 

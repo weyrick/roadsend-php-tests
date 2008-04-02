@@ -20,7 +20,7 @@ while (list($p, $s) = each($b)) {
 var_dump($a);
 
 ?>
---EXPECTF--
+--EXPECT--
 string(8) "af-utf-8"
 array(3) {
   [0]=>

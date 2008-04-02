@@ -41,8 +41,7 @@ fclose($fp);
 unlink($filename);
 ?>
 
-
---EXPECTF--
+--EXPECT--
 ftell 1:  0
 fwrite 1: 6
 ftell 2:  6

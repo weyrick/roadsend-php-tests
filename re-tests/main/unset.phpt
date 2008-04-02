@@ -20,7 +20,7 @@ unset($a,$b,$c);
 echo "i3: ".isset($a,$b,$c)."\n";
 
 ?>
---EXPECTF--
+--EXPECT--
 Array
 (
     [1] => one

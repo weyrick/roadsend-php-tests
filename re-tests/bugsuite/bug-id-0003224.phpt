@@ -10,6 +10,5 @@ class foo {
 }
 $foo = new foo();
 ?>
-
---EXPECTF--
+--EXPECT--
 value

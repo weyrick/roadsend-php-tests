@@ -16,5 +16,5 @@ class bar extends foo {
 echo "subclass? ".is_subclass_of('bar','foo'),"\n";
 
 ?>
---EXPECTF--
+--EXPECT--
 subclass? 1

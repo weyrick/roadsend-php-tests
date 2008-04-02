@@ -18,7 +18,7 @@ echo $reader->zot . "\n";
 
 
 ?>
---EXPECTF--
+--EXPECT--
 instantiating a class with a variable class name
 
 

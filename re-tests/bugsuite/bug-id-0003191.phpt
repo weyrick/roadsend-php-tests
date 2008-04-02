@@ -7,7 +7,6 @@ echo "pattern: $foo\n";
 $foo = '/^(3\.23|4\.|5\.)/';
 echo "pattern: $foo\n";
 ?>
-
---EXPECTF--
+--EXPECT--
 pattern: /^(3\.23|4\.|5\.)/
 pattern: /^(3\.23|4\.|5\.)/

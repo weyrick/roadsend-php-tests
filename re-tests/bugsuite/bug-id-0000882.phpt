@@ -12,7 +12,6 @@ $value = @$cache[$key];
 // will not issue a notice if the index $key doesn't exist.
 
 ?>
-
---EXPECTF--
+--EXPECT--
  problem with using @ to disable errors
 Failed opening file: error was ''

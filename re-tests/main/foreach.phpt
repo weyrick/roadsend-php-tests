@@ -39,8 +39,7 @@ Array
 
 
 ?>
-
---EXPECTF--
+--EXPECT--
 Do you like red?
 Do you like blue?
 Do you like green?

@@ -9,6 +9,5 @@ if (empty($foo)) {
     print "foo is not empty\n";
 }
 ?>
-
---EXPECTF--
+--EXPECT--
 foo is empty

@@ -24,7 +24,7 @@ useit();
 print $aglobal . "\n";
 
 ?>
---EXPECTF--
+--EXPECT--
 unreferenced magic global stuff doesn't work.
 
 aglobal

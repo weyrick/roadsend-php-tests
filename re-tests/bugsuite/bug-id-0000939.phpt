@@ -14,7 +14,7 @@ unset($a, $b, $c);
 echo "$a, $b, $c\n";
 
 ?>
---EXPECTF--
+--EXPECT--
 unset() needs to take variable number of arguments
 
 hi, yo, man!

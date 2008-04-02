@@ -52,8 +52,7 @@ var_dump(current($foo));
 ?>
 
 
-
---EXPECTF--
+--EXPECT--
 Array
 (
     [0] => bob

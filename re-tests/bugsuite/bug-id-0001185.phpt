@@ -16,8 +16,7 @@ HERE;
 echo $test;
 
 ?>
-
---EXPECTF--
+--EXPECT--
 0001185 here doc escaping
 
 php escapes \\ to \ within heredocs

@@ -13,8 +13,7 @@ $c = new testc();
 echo "{$c->tp{3}}\n";
 
 ?>
-
---EXPECTF--
+--EXPECT--
 0000730 access to a string index in a class property
 
 

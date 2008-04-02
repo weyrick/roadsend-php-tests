@@ -54,7 +54,7 @@ $a >>= 4;
 var_dump($a);
 
 ?>
---EXPECTF--
+--EXPECT--
 0000926: we need more operators
 
 *=  int(420)

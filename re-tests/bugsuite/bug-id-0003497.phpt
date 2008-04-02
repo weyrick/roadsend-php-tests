@@ -20,7 +20,7 @@ $r = bwops(8,16);
 var_dump($r);
 
 ?>
---EXPECTF--
+--EXPECT--
 array(9) {
   [0]=>
   int(24)

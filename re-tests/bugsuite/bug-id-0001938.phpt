@@ -12,7 +12,7 @@ echo $test{'two'}['c'];
 echo "\n";
 
 ?>
---EXPECTF--
+--EXPECT--
 Pcc pukes if you try to access the elements of a multi-dimensional array 
 and mix the {} and the []
 

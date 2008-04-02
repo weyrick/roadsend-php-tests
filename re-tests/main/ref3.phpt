@@ -30,7 +30,7 @@ var_dump($c);
 var_dump($d);
 
 ?>
---EXPECTF--
+--EXPECT--
 array(2) {
   [0]=>
   object(foo)#1 (0) {

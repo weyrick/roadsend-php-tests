@@ -9,6 +9,5 @@
 	# This program is distributed under the terms and conditions of the GPL
 	# See the README and LICENSE files for details
 ?>
-
---EXPECTF--
+--EXPECT--
  windows carriage returns throw error

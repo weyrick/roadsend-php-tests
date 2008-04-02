@@ -31,7 +31,7 @@ print_r($b);
 print_r($c);
 
 ?>
---EXPECTF--
+--EXPECT--
 int max: 9223372036854775807
 int min: 8
 overflow key: 9.22337203685E+18

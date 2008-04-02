@@ -30,7 +30,7 @@ var_dump($v);
 
 echo "==Done==\n";
 ?>
---EXPECTF--
+--EXPECT--
 ==Mixed==
 int(-1)
 string(1) "a"

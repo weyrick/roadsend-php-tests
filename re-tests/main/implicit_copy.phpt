@@ -46,7 +46,7 @@ print_r($foo);
 
 
 ?>
---EXPECTF--
+--EXPECT--
 foo
 Array
 (

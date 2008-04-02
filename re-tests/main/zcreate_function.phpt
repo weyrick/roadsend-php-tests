@@ -124,8 +124,7 @@ Array
  )
 
      
-
---EXPECTF--
+--EXPECT--
 ln(2) + ln(2.71828182846) = 1.69314718056
 
 Or, perhaps to have general handler function that can apply a set of operations to a list of parameters:

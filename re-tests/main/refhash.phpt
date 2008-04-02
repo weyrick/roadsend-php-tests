@@ -22,7 +22,7 @@ echo "4: $foo[asdf], $foo[bsdf], $foo[csdf]\n";
 
 
 ?>
---EXPECTF--
+--EXPECT--
 1: bar: 1, tree: 2
 2: 1, 1, 2
 3: bar: 9, tree: 10

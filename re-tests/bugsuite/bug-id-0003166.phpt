@@ -17,7 +17,7 @@ foreach ($f as $k => $v) {
 }
 
 ?>
---EXPECTF--
+--EXPECT--
 foreach an object like an array
 a => 1
 b => 2

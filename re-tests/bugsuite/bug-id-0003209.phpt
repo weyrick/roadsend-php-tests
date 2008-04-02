@@ -16,8 +16,7 @@ class Foo {
 $foo = new Foo();               
 var_dump($foo);
 ?>
-
---EXPECTF--
+--EXPECT--
 object(Foo)#1 (2) {
   ["prop"]=>
   &string(3) "foo"

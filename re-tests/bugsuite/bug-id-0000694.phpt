@@ -26,8 +26,7 @@ foreach ($classVars as $n => $v) {
 
 ?>
 
-
---EXPECTF--
+--EXPECT--
 class property access with $ throws parse error
 the following causes a parse error:
 (inside class method)

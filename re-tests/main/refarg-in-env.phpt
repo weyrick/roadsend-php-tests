@@ -95,7 +95,7 @@ echo "11foo: $foo, bar: $bar, zot: $zot\n";
 echo "12foo: ". $$broof . ", bar: " . $$bing . ", zot: " . $$barp . "\n";
 
 ?>
---EXPECTF--
+--EXPECT--
 0bar: 11, foo: 11
 1foo: 11, bar: 13, zot: 13
 2foo: 11, bar: 11, zot: 11

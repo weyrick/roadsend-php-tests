@@ -51,7 +51,7 @@ echo "{$test['include']}";
 
 
 ?>
---EXPECTF--
+--EXPECT--
 0000982 hash key 'default','var' throws parse error
 
 hey

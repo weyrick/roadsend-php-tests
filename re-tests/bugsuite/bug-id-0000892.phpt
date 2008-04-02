@@ -11,7 +11,7 @@ This script needs to be run through mod_phpoo to matter.
 print "current working directory is: " . posix_getcwd() . "\n";
 
 ?>
---EXPECTF--
+--EXPECT--
 right now the default script root directory is /, it needs to be the 
 directory the script lives in for relative includes to work.
 <BR>

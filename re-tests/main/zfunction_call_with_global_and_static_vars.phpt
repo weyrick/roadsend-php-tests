@@ -19,6 +19,5 @@
 	Test();	
 	echo "shoe $a $b $c shoe";
 	Test()?>
-
---EXPECTF--
+--EXPECT--
 one 1 5 onetwo 2 2 twobuckle 10 5  myone 2 5 onetwo 3 2 twoshoe 10 5  shoeone 3 5 onetwo 4 2 two

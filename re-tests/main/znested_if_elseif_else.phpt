@@ -15,6 +15,5 @@
 		echo "bad";
 	endif;
   endif?>	
-
---EXPECTF--
+--EXPECT--
 good	

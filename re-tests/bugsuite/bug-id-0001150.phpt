@@ -51,8 +51,7 @@ print "inloop $i for $o\n";
 reset($arrayOuter);
 reset($arrayInner);
 ?>
-
---EXPECTF--
+--EXPECT--
  Correct - with inner loop reset.
 inloop 0 for key1
 inloop 1 for key1

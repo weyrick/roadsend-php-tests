@@ -15,7 +15,6 @@ function blah() {
 blah();
 
 ?>
-
---EXPECTF--
+--EXPECT--
 0000986 parse error globalizing a variable variable from a hash
 this should say hi--> hi

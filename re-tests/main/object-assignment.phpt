@@ -22,7 +22,7 @@ print_r($reference);
 print_r($assigned);
 
 ?>
---EXPECTF--
+--EXPECT--
 An example from the PHP docs demonstrating copy suppression without losing 
 the reference stuff.
 aclass Object

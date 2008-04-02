@@ -9,7 +9,7 @@ var_dump(range("", "1"));
 var_dump(range(1, ""));
 var_dump(range(1, array('hi')));
 ?>
---EXPECTF--
+--EXPECT--
 array(2) {
   [0]=>
   int(2003)

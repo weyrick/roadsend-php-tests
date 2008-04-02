@@ -23,8 +23,7 @@ $foo = "bar\n";
 echo "bar is not " . $$foo . "\n"; 
 
 ?>
-
---EXPECTF--
+--EXPECT--
 bar is 7
 bar is $bar
 bar is 7

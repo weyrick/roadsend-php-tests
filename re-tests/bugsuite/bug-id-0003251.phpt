@@ -8,6 +8,6 @@
  unset($foo);
  echo '$foo is '.$foo.' and DEFFOO is '.DEFFOO."\n";
 ?>
---EXPECTF--
+--EXPECT--
 $foo is some val and DEFFOO is some val
 $foo is  and DEFFOO is some val

@@ -25,8 +25,7 @@ if ($expression) {
     <?php 
 }
 ?>
-
---EXPECTF--
+--EXPECT--
     <strong>This is \false.</strong>
         <strong>This is 'true'.</strong>
     

@@ -36,7 +36,7 @@ var_dump($ping);
 
 
 ?>
---EXPECTF--
+--EXPECT--
 When an object is copied, you need to copy the properties, 
 not just the hashtable that holds them.  Tarnation.
 

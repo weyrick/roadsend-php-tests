@@ -14,7 +14,6 @@ class t {
 
 
 ?>
-
---EXPECTF--
+--EXPECT--
 0000792 parse error using class property name 'class'
 

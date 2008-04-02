@@ -14,7 +14,7 @@ function foo() {
 $bar[1];
 }
 ?>
---EXPECTF--
+--EXPECT--
 bigloo type error from pcc
 
 Description 	pcc gives the following warning:

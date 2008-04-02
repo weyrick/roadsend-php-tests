@@ -46,7 +46,7 @@ define($foo, $bar);
 echo "constant: ".DYNAMIC_CONSTANT."\n";
 
 ?>
---EXPECTF--
+--EXPECT--
 Lower is 42
 Lower is 42
 Upper is 42

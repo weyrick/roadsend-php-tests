@@ -10,5 +10,5 @@ function foo($a, $b) {
 }
 
 ?>
---EXPECTF--
+--EXPECT--
 1 2

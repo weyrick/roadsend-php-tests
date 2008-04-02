@@ -8,7 +8,6 @@
 echo "nope!\n";
 
 ?>
-
---EXPECTF--
+--EXPECT--
 0000953 parse error on question mark in comments
 nope!

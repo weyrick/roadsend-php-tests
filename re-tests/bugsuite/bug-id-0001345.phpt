@@ -19,8 +19,7 @@ $a->string('a phony phalacy');
 ?>
 
 
-
---EXPECTF--
+--EXPECT--
 0001345 parse error on class with method 'string'
 
 your silly string was a phony phalacy

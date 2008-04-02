@@ -43,8 +43,7 @@ switch (1) {
  }
 }
 ?>
-
---EXPECTF--
+--EXPECT--
 In branch 1
 Inner default...
 blah=100

@@ -22,7 +22,7 @@ define('PEAR_ZE2', (afunction_exists('version_compare') && aversion_compare(azen
 echo PEAR_ZE2 . "\n";
 
 ?>
---EXPECTF--
+--EXPECT--
 0000732 parse error on complicated constant define()
 
 1

@@ -31,8 +31,7 @@ $foo[++$count][1][3] =& $count;
 print "$count\n";
 var_dump($foo);
 ?>
-
---EXPECTF--
+--EXPECT--
 When incrementing inside an element of an array, the var ($count in this case) seams to get incremented by the number of elements being addressed.
 
 i.e. $count is 2 at the end here

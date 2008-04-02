@@ -10,6 +10,5 @@
 		if($a<10): Test(); endif;
 	}
 	Test()?>
-
---EXPECTF--
+--EXPECT--
 1 2 3 4 5 6 7 8 9 

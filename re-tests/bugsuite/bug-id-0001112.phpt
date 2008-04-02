@@ -14,7 +14,7 @@ var_dump(array_pop($a));
 var_dump(key($a));
 
 ?>
---EXPECTF--
+--EXPECT--
 int(0)
 string(1) "c"
 int(0)

@@ -77,7 +77,7 @@ foreach ($sample_urls as $i => $url) {
     //    if ($i > 15) die("done");
 }
 ?>
---EXPECTF--
+--EXPECT--
 parsing 0: <>
 array(1) {
   ["path"]=>

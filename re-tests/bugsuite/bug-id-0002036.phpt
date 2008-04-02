@@ -17,8 +17,7 @@ var_dump($foo);
 ?>
 
 
-
---EXPECTF--
+--EXPECT--
 the reference property belongs to values, not hash slots
 
 in this case, both entries in the array are references, because there is only 

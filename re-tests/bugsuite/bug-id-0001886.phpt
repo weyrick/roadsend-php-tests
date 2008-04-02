@@ -46,7 +46,7 @@ var_dump($b);
 var_dump($c);
 
 ?>
---EXPECTF--
+--EXPECT--
 recursive references
 aclass Object
 (

@@ -181,8 +181,7 @@ $tpt->addText('this is from second call','areaOne');
 // echo $tpt->run();
 
 ?>
-
---EXPECTF--
+--EXPECT--
 methods can modify their $this, so it must have any pending copies 
 forced on it for the method call.  This tests for that, in an 
 admittedly baroque way. the line         

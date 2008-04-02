@@ -25,8 +25,7 @@ for ($r=0, $num = count($read); $r < $num &&
 substr($read[$r], 0, 8) != '* SEARCH'; $r++) {}
 
 ?>
-
---EXPECTF--
+--EXPECT--
 0000796 parser error on empty braces
 
 or

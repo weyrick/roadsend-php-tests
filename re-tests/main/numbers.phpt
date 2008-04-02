@@ -108,8 +108,7 @@ $c[] = +12.5;
 var_dump($c);
 
 ?>
-
---EXPECTF--
+--EXPECT--
 int(25)
 dec1 : 536870912
 int(536870912)

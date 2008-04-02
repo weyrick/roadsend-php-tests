@@ -13,15 +13,15 @@ $bar = `echo \`echo "asdf"\``;
 echo $bar;
 
 ?>
---EXPECTF--
-total 1068
+--EXPECT--
+total 1072
 -rw-r--r--  1 root    root      3831 Jul 21  2007 DIR_COLORS
 drwxr-xr-x 15 root    root      4096 Feb 13 18:42 X11
 drwxr-xr-x  3 root    root      4096 May 30  2007 acpi
 -rw-r--r--  1 root    root        44 Mar  5 21:22 adjtime
 drwxr-xr-x  5 root    root      4096 Nov  3 13:14 apache2
 -rw-r--r--  1 root    root      5318 Apr 22  2007 asound.state
-drwxr-xr-x  2 root    root      4096 Sep 30 14:35 ati
+drwxr-xr-x  2 root    root      4096 Sep 30  2007 ati
 drwxr-xr-x  2 root    root      4096 Aug 15  2007 bash
 drwxr-xr-x  2 root    root      4096 Dec 31  2005 bash_completion.d
 -rw-r--r--  1 root    root       396 Jun  5  2007 blkid.tab
@@ -37,11 +37,11 @@ drwxr-x---  2 root    root      4096 Mar 14  2007 cron.hourly
 drwxr-x---  2 root    root      4096 Mar 14  2007 cron.monthly
 drwxr-x---  2 root    root      4096 May 18  2007 cron.weekly
 -rw-r--r--  1 root    root       657 Dec 14 09:46 crontab
--rw-r--r--  1 root    root      2424 Mar 13 19:22 csh.env
+-rw-r--r--  1 root    root      2424 Mar 28 17:11 csh.env
 drwxr-xr-x  6 root    lp        4096 Nov  3 13:14 cups
 drwxr-xr-x  3 root    root      4096 Feb 23  2007 dbus-1
 drwxr-xr-x  2 root    root      4096 Apr 23  2006 default
-drwxr-xr-x  2 root    root      4096 Sep 30 14:34 dhcp
+drwxr-xr-x  2 root    root      4096 Sep 30  2007 dhcp
 -rw-r--r--  1 root    root      1089 Feb 20 13:13 dispatch-conf.conf
 drwxr-xr-x  2 root    root      4096 Jul 27  2005 distcc
 -rw-r--r--  1 root    root       426 Nov  3 08:21 dmtab
@@ -92,7 +92,7 @@ drwxr-xr-x  2 root    root      4096 Feb 13 15:16 init.d
 -rw-r--r--  1 root    root        30 Feb 12 19:13 issue
 -rw-r--r--  1 root    root       701 Feb 12 19:13 issue.logo
 drwxr-xr-x  5 root    root      4096 Mar 15  2007 joe
--rw-r--r--  1 root    root    163702 Mar 13 19:22 ld.so.cache
+-rw-r--r--  1 root    root    164110 Mar 28 17:11 ld.so.cache
 -rw-r--r--  1 root    root      1025 Mar  7 15:57 ld.so.conf
 drwxr-xr-x  2 root    root      4096 Jul 30  2006 libgda
 drwxr-xr-x  2 root    root      4096 Feb  5 15:59 lighttpd
@@ -108,7 +108,7 @@ drwxr-xr-x  2 root    root      4096 Nov 20  2005 lynx
 -rw-r--r--  1 root    root       437 Aug 14  2007 mDNSResponderPosix.conf
 drwxr-xr-x  3 root    root      4096 May 14  2007 mail
 -rw-r--r--  1 root    root      2235 Mar 14  2007 mailcap
--rw-r--r--  1 root    root       846 Jul 21  2007 make.conf
+-rw-r--r--  1 root    root       847 Mar 21 11:21 make.conf
 -rw-r--r--  1 root    root     21691 Feb 20 13:13 make.conf.example
 -rw-r--r--  1 root    root       381 Oct  4  2005 make.conf~
 -rw-r--r--  1 root    root      3034 Feb 20 13:13 make.globals
@@ -119,7 +119,7 @@ drwxr-xr-x  2 root    root      4096 Aug  9  2006 minicom
 -rw-r--r--  1 root    root       330 Feb 13 09:26 mke2fs.conf
 -rw-r--r--  1 root    root      3329 Feb 14 13:39 modprobe.conf
 -rw-r--r--  1 root    root      6835 Aug 17  2006 modprobe.conf.old
-drwxr-xr-x  2 root    root      4096 Sep 29 20:05 modprobe.d
+drwxr-xr-x  2 root    root      4096 Sep 29  2007 modprobe.d
 -rw-r--r--  1 root    root        59 Jul 28  2005 modprobe.devfs
 -rw-r--r--  1 root    root        59 Aug 17  2006 modprobe.devfs.old
 drwxr-xr-x  2 root    root      4096 Aug 15  2007 modules.autoload.d
@@ -163,7 +163,7 @@ drwxr-xr-x  5 root    root      4096 Nov 16 14:58 ppp
 -rw-r--r--  1 root    root       172 Mar  5 21:23 printcap
 -rw-r--r--  1 root    root      2141 Feb 12 19:13 profile
 -rw-r--r--  1 root    root      3334 Feb 22 20:22 profile.csh
--rw-r--r--  1 root    root      2426 Mar 13 19:22 profile.env
+-rw-r--r--  1 root    root      2426 Mar 28 17:11 profile.env
 -rw-r--r--  1 root    root      2053 Sep 26  2005 profile~
 -rw-r--r--  1 root    root      1623 Feb 12 19:13 protocols
 -rw-r--r--  1 root    root       134 Mar 14  2007 pwdb.conf
@@ -190,7 +190,7 @@ drwxr-xr-x  2 root    root      4096 Apr 23  2006 sgml
 -rw-------  1 root    root       846 Feb 12 19:13 shadow
 -rw-------  1 root    root       820 Jul 13  2007 shadow-
 -rw-r--r--  1 root    root       118 Feb 12 19:13 shells
-drwxr-xr-x  3 root    root      4096 Sep 29 20:22 skel
+drwxr-xr-x  3 root    root      4096 Sep 29  2007 skel
 drwxr-xr-x  2 root    root      4096 Feb 24  2007 snmp
 drwxr-xr-x  3 root    root      4096 Sep 23  2005 sound
 lrwxrwxrwx  1 root    root        22 Jun 11  2006 spamassassin -> /etc/mail/spamassassin

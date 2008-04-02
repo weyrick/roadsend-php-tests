@@ -4,6 +4,5 @@
 <?PHP
 print "foo";
 ?>
-
---EXPECTF--
+--EXPECT--
 foo

@@ -5,5 +5,5 @@
 header("bork: baz"); 
 echo "okay\n";
 ?>
---EXPECTF--
+--EXPECT--
 okay

@@ -15,7 +15,7 @@ $b++;
 echo "A: $a, B: $b\n";
 
 ?>
---EXPECTF--
+--EXPECT--
 A: 8
 B: 32
 A: 32, B: 32

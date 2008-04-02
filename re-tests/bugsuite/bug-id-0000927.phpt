@@ -15,8 +15,7 @@ foreach ($GLOBALS as $key => $value)
 echo "it worked.\n";
 
 ?>
-
---EXPECTF--
+--EXPECT--
 0000927 unable to foreach() on $GLOBALS
 
 it worked.

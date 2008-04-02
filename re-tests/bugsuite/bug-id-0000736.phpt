@@ -54,8 +54,7 @@ echo $b->style();
 
 
 ?>
-
---EXPECTF--
+--EXPECT--
 0000736
 
 this is the core of the issue:

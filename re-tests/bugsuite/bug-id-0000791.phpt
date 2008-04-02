@@ -16,8 +16,7 @@ echo "2\n";
 }
 
 ?>
-
---EXPECTF--
+--EXPECT--
 0000791 switch statement parse error having to do with where the default: is
 
 1

@@ -23,8 +23,7 @@ for ($i = 0; $i < 10; $i++) {
 
 ?>
 done
-
---EXPECTF--
+--EXPECT--
  1
 2
 3

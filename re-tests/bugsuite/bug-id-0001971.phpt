@@ -8,7 +8,7 @@ parser pukes on empty switch statements
 switch(0) {}
 print "ping\n";
 ?>
---EXPECTF--
+--EXPECT--
 parser pukes on empty switch statements
 
 ping

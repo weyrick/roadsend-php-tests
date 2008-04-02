@@ -21,6 +21,5 @@ print "$Y[0] $Y[$last]\n";
 foo();
 
 ?>
-
---EXPECTF--
+--EXPECT--
 100 100000

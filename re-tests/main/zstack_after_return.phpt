@@ -14,6 +14,5 @@ while($i<2):
 	$i++;
 endwhile;
 ?>
-
---EXPECTF--
+--EXPECT--
 HelloHello

@@ -103,23 +103,23 @@ $t2 = distance($b,"i am not an array")."\n";
 $t3 = distance($a,$b)."\n";
 
 ?>
---EXPECTF--
+--EXPECT--
 <errorentry>
-	<datetime>2008-03-20 13 (CET)</datetime>
+	<datetime>2008-04-02 13 (CEST)</datetime>
 	<errornum>256</errornum>
 	<errortype>User Error</errortype>
 	<errormsg>Vectors need to be of the same size</errormsg>
 </errorentry>
 
 <errorentry>
-	<datetime>2008-03-20 13 (CET)</datetime>
+	<datetime>2008-04-02 13 (CEST)</datetime>
 	<errornum>256</errornum>
 	<errortype>User Error</errortype>
 	<errormsg>Incorrect parameters, arrays expected</errormsg>
 </errorentry>
 
 <errorentry>
-	<datetime>2008-03-20 13 (CET)</datetime>
+	<datetime>2008-04-02 13 (CEST)</datetime>
 	<errornum>512</errornum>
 	<errortype>User Warning</errortype>
 	<errormsg>Coordinate 2 in vector 1 is not a number, using zero</errormsg>

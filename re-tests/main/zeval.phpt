@@ -6,6 +6,5 @@
 	$a="echo \"Hello\";";
 	eval($a);
 ?>
-
---EXPECTF--
+--EXPECT--
 Hello

@@ -15,8 +15,7 @@ class aclass {
 $a = new aclass();
 
 ?>
-
---EXPECTF--
+--EXPECT--
 0000983 parse error, single quotes in double quotes on class var default
 
 'test'

@@ -40,8 +40,7 @@ width: expression(document.documentElement.clientWidth - 30);
 ECHO;
 
 ?>
-
---EXPECTF--
+--EXPECT--
 0000790 support for here docs
 
 

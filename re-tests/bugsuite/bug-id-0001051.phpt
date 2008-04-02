@@ -24,6 +24,6 @@ echo $a->afunc();
 
 
 ?>
---EXPECTF--
+--EXPECT--
 0001051:  parse error on parent:: as rval
 super!!!!!!!!!

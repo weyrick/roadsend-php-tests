@@ -14,6 +14,5 @@ echo $filename;
 
 ?>
 
-
---EXPECTF--
+--EXPECT--
 this is craptacular

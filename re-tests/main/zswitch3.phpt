@@ -30,8 +30,7 @@ for ($i=0; $i<3; $i++) {
   }
 }
 ?>
-
---EXPECTF--
+--EXPECT--
 zero
 one
 2

@@ -9,6 +9,5 @@
 	echo "good1";
 	echo "good2";
   endif?>
-
---EXPECTF--
+--EXPECT--
 good1good2

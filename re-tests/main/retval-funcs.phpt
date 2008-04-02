@@ -60,8 +60,7 @@ foreach (array(1,2,3) as $o) {
 }
 
 ?>
-
---EXPECTF--
+--EXPECT--
 5
 5int(5)
 yes

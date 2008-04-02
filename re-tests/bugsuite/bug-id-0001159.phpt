@@ -37,7 +37,7 @@ printf("printf test 29:%2\$-2d %1\$2d\n", 1, 2);
 print("printf test 30:"); printf("%0\$s", 1); print("x\n");
 
 ?>
---EXPECTF--
+--EXPECT--
  printf test 1:simple string
 printf test 2:42
 printf test 3:3.333333
@@ -69,6 +69,4 @@ printf test 26:2 1
 printf test 27:3 1 2
 printf test 28:02  1
 printf test 29:2   1
-printf test 30:
-Warning: printf(): Argument number must be greater than zero in /home/weyrick/workspace/pcc/bugs/tests/bug-id-0001159.php on line 34
-x
+printf test 30:x

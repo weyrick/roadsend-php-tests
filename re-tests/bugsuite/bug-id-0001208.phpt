@@ -15,7 +15,7 @@ print_r($a4);
 
 
 ?>
---EXPECTF--
+--EXPECT--
 merged: Array
 (
     [0] => default

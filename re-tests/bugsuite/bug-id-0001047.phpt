@@ -14,7 +14,7 @@ var_dump($a);
 
 
 ?>
---EXPECTF--
+--EXPECT--
 array(5) {
   [0]=>
   array(1) {

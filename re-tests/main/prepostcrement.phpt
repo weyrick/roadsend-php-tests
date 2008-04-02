@@ -22,7 +22,7 @@ $a = 5;
 echo "Should be 4: " . --$a . "<br>\n";
 echo "Should be 4: " . $a . "<br>\n";
 ?>
---EXPECTF--
+--EXPECT--
 <h3&gt;Postincrement</h3&gt;Should be 5: 5<br>
 Should be 6: 6<br>
 <h3>Preincrement</h3>Should be 6: 6<br>

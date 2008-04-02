@@ -41,7 +41,7 @@ $fun("trash", "bork", $bar);
 
 
 ?>
---EXPECTF--
+--EXPECT--
 called with does this work?.
 called with trash, 3.
 bar is now 4

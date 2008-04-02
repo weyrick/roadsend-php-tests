@@ -14,7 +14,7 @@ echo "$ahash[1]\n";
 
 
 ?>
---EXPECTF--
+--EXPECT--
 foo
 foo
 foo

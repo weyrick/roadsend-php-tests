@@ -22,6 +22,5 @@ $a->hi();
 
 ?>
 down here
-
---EXPECTF--
+--EXPECT--
  up here

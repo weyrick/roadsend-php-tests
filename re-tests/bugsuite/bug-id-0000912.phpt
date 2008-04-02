@@ -31,8 +31,7 @@ print "that line\n";
 $a->a('meek');
 
 ?>
-
---EXPECTF--
+--EXPECT--
 parent:: doesn't work inside a switch
 that line
 one a meek

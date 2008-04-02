@@ -17,7 +17,7 @@ $b =& new aclass();
 $c = new aclass();
 
 ?>
---EXPECTF--
+--EXPECT--
 array(2) {
   [0]=>
   string(3) "one"

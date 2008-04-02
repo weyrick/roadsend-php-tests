@@ -3,6 +3,5 @@
 --FILE--
 <?php echo "\"\t'" . 
            '\n\\\'a\\\b\\' ?>
-
---EXPECTF--
+--EXPECT--
 "	'\n\'a\\b\

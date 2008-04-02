@@ -221,8 +221,7 @@ $afoo->string();
 $afoo->object();
 
 ?>
-
---EXPECTF--
+--EXPECT--
 property 'include': include
 property 'include_once': include_once
 property 'require': require

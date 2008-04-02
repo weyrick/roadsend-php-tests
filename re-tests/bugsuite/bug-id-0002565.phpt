@@ -15,8 +15,7 @@ fclose($bar);
 echo filesize("woot") . "\n";
 
 ?>
-
---EXPECTF--
+--EXPECT--
 0002565: fwrite() is not binary safe
 
 it's using stdio's fputs(), so it stops at the first 0 in the string:

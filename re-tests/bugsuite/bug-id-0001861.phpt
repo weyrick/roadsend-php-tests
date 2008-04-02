@@ -55,8 +55,7 @@ foreach ($testcases as $test) {
 }
 ?>
 
-
---EXPECTF--
+--EXPECT--
 PHP follows Perl's convention when dealing with arithmetic operations on character variables and not C's. For example, in Perl 'Z'+1 turns into 'AA', while in C 'Z'+1 turns into '[' ( ord('Z') == 90, ord('[') == 91 ). Note that character variables can be incremented but not decremented.
 
 Additional Information 	

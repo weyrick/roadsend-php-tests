@@ -8,7 +8,6 @@
 error_reporting(E_ALL & ~E_NOTICE);
 
 ?>
-
---EXPECTF--
+--EXPECT--
 0000750 parse error on bit operations
 

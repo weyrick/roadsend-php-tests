@@ -21,7 +21,8 @@
 
 /**
  * This is a test suite program designed to be compatible with Zend .phpt test
- * template files. It supports features that are specific to Roadsend PHP.
+ * template files. It supports features that are specific to Roadsend PHP, but should
+ * also be compatible with Zend PHP
  */
 
 class Control {
@@ -58,6 +59,10 @@ class Control {
     
     public static function bomb($msg) {
         die("FAIL: {$msg}\n");
+    }
+
+    public static function flush() {
+        fflush(STDOUT);
     }
     
 }
@@ -109,7 +114,8 @@ class TestSuite {
        
         switch ($GLOBALS['argv'][1]) {
            case '-d':
-               $this->findTestsInDirectory($GLOBALS['argv'][2]);
+               $testDir = $GLOBALS['argv'][2];
+               $this->findTestsInDirectory($testDir);
                break;
            default:
                Control::bomb('invalid option: '.$GLOBALS['argv'][1]);
@@ -124,19 +130,20 @@ class TestSuite {
        
         Control::log(1,sizeof($this->testList).' total tests');
         foreach ($this->testList as $testH) {
-            echo basename($testH->tptFileName).': ';
+            echo substr($testH->tptFileName,strlen($testDir)).': ';
             $testH->runTest();
-            if ($testH->interpetResult == PHP_Test::RESULT_PASS) {
-                echo "INTERPRETER: PASS\n";
-            }
-            else {
-                echo "INTERPRETER: FAIL\n";
-            }
-            echo "\n";
-            //XXX
-            //break;
         }
+
+        $this->showResults();
         
+    }
+
+    public function showResults() {
+        echo "------------- INTERPRETER FAILURES -------------\n";
+        foreach ($this->testList as $testH) {
+            if ($testH->interpetResult == PHP_Test::RESULT_FAIL)
+                echo "{$testH->tptFileName}\n";
+        }
     }
 
 }
@@ -218,8 +225,8 @@ class PHP_Test {
         if (!file_put_contents($this->testFileName, $this->sectionData['FILE']))
             Control::bomb("unable to write .php test file (FILE section): ".$this->testFileName);
         
-        if (!file_put_contents($this->expectFileName, $this->sectionData['EXPECTF']))
-            Control::bomb("unable to write expect test file (EXPECTF section): ".$this->expectFileName);
+        if (!file_put_contents($this->expectFileName, $this->sectionData['EXPECT']))
+            Control::bomb("unable to write expect test file (EXPECT section): ".$this->expectFileName);
         
     }
 
@@ -232,7 +239,7 @@ class PHP_Test {
         if (!file_put_contents($this->ioutFileName, $this->iOutput))
             Control::bomb("unable to write interpreter output file".$this->ioutFileName);
 
-        if ($this->iOutput != $this->sectionData['EXPECTF']) {
+        if ($this->iOutput != $this->sectionData['EXPECT']) {
             $this->interpetResult = self::RESULT_FAIL;
         }
         else {
@@ -265,12 +272,18 @@ class PHP_Test {
         // write test
         $this->writeTest();
         
+        echo "INTERPRETER: ";
+        Control::flush();
+        
         // do interpreter test
         $this->doInterpreterTest();
 
         if ($this->interpetResult == self::RESULT_FAIL)
             $this->writeInterpreterDiff();
 
+        echo ($this->interpetResult == PHP_Test::RESULT_PASS) ? "PASS " : "FAIL ";
+        echo "\n";
+        
         // do compiled test
         if (defined('ROADSEND_PHP')) {
             $this->doCompilerTest();

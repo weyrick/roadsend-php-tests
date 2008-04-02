@@ -113,8 +113,7 @@ copying();
 
 
 ?>
-
---EXPECTF--
+--EXPECT--
 0001246 warning on mutation of non reference function parameter
 
 string(4) "test"

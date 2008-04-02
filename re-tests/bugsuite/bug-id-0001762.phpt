@@ -15,6 +15,6 @@ $func = 'afunc21';
 $a->$func();
 
 ?>
---EXPECTF--
+--EXPECT--
 runtime error in compiler on variable method name
 you made it

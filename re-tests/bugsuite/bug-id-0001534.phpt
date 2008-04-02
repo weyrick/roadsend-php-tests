@@ -16,6 +16,6 @@ $a = new aclass();
 $a->unsetit();
 
 ?>
---EXPECTF--
+--EXPECT--
 string(2) "ho"
 NULL

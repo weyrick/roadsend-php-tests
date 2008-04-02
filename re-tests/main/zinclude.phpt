@@ -28,6 +28,5 @@ require_once("includetest-once" . $includesuffix);
 
 
 ?>
-
---EXPECTF--
+--EXPECT--
 HelloHelloHelloHelloHelloHelloHelloHelloHello

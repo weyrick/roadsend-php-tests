@@ -17,8 +17,7 @@ function bar() {
 
 bar();
 ?>
-
---EXPECTF--
+--EXPECT--
 boo
 foo
 boo

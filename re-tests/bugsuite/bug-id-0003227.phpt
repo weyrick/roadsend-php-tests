@@ -8,7 +8,6 @@ unset($$foo);
 echo $bar."\n";
 ?>
 
-
---EXPECTF--
+--EXPECT--
 
 

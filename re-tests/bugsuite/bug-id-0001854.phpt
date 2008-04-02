@@ -23,8 +23,7 @@ for($a=1; $a<10; $a++) {
 ?>
 
 foo
-
---EXPECTF--
+--EXPECT--
 Summary  	 continue
 
  problem inside a switch statement

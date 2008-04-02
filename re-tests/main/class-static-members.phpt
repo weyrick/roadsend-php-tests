@@ -69,7 +69,7 @@ $bar = new Bar2();
 print $bar->fooStatic() . "\n";
 
 ?>
---EXPECTF--
+--EXPECT--
 foo Object
 (
 )

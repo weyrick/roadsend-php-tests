@@ -39,7 +39,7 @@ print afun()->prop;
 print_r(afun()->method());
 
 ?>
---EXPECTF--
+--EXPECT--
 Test the new $foo->bar()->baz() syntax.
 Constructor called on an argument
 Method called

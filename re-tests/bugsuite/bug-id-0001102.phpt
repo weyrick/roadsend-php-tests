@@ -7,7 +7,7 @@ var_dump(preg_split('/\b/', $data));
 var_dump(preg_split('/,/', "one,two,,three,,"));
 var_dump(preg_split('/\b/', $data, PREG_SPLIT_OFFSET_CAPTURE));
 ?>
---EXPECTF--
+--EXPECT--
 array(7) {
   [0]=>
   string(2) "(#"

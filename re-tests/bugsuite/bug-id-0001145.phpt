@@ -17,7 +17,7 @@ var_dump(@strstr("", "a"));
 var_dump(md5(@strstr("\\\\a\\", "\\a")));
 
 ?>
---EXPECTF--
+--EXPECT--
 string(11) "test string"
 string(6) "string"
 string(6) "string"

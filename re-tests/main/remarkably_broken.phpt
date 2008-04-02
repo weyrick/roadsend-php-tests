@@ -31,8 +31,7 @@ print $foo;
 
 print "\n";
 ?>
-
---EXPECTF--
+--EXPECT--
 bippo
 b
 fop

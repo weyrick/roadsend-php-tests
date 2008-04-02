@@ -61,8 +61,7 @@ var_dump($t2);
 
 
 ?>
-
---EXPECTF--
+--EXPECT--
 this is similar to what sitemanager does.  it should help us ferret out 
 copying problems.
 

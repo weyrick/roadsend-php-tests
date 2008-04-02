@@ -25,8 +25,7 @@ ob_start("callback");
 ob_end_flush();
 
 ?>
-
---EXPECTF--
+--EXPECT--
 
 <html>
 <body>

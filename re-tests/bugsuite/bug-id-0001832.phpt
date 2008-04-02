@@ -21,7 +21,7 @@ else
 
 
 it doesn't seam to be a problem under any other combination of curly brackets or functions.
---EXPECTF--
+--EXPECT--
 wierd problem with unset
 
 When unset is called as the only instruction in a foreach loop 

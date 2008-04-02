@@ -17,7 +17,7 @@ echo 'single \
       backslash-newlines';
 
 ?>
---EXPECTF--
+--EXPECT--
 this $ is a  dqstring 
 "$this is a [test] of bracketsdouble \
       quoted \

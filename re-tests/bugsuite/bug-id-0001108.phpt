@@ -22,7 +22,7 @@ foreach ($arrays as $item) {
     echo "\n";
 }
 ?>
---EXPECTF--
+--EXPECT--
 array(0) {
 }
 

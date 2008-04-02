@@ -43,7 +43,7 @@ function funoftwoglobals()
 }
 
 ?>
---EXPECTF--
+--EXPECT--
 foo: this is variable 'foo'
 bar: 12
 in funofoneglobal, foo is this is variable 'foo'

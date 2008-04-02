@@ -74,8 +74,7 @@ $a->afun_with_args(88, 89, 90, 91);
 
 ?> 
 
-
---EXPECTF--
+--EXPECT--
 test variable arity user functions
 
 Number of arguments: 0<br />

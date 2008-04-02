@@ -11,7 +11,7 @@ var_dump(
         )
     );
 ?>
---EXPECTF--
+--EXPECT--
 array(3) {
   [0]=>
   array(3) {

@@ -52,7 +52,7 @@ if ("ASDF" == true) {
 }
 
 ?>
---EXPECTF--
+--EXPECT--
 SOME_CONSTANT1testtesting123defined1? [1]
 defined1a? []
 defined2? []

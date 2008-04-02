@@ -55,7 +55,7 @@ $f->testm2();
 testfunc();
 
 ?>
---EXPECTF--
+--EXPECT--
  -- , function: 
 location is magic-constants.php on line 42
 Foo -- Foo::__construct

@@ -28,8 +28,7 @@ echo $b->zot;
 
 ?>
 
-
---EXPECTF--
+--EXPECT--
 0000735 need support for returning a value from a function by reference
 
 2

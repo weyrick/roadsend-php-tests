@@ -8,7 +8,7 @@ list($foo['asdf'], $foo['qwerty']) = array("unga", "bunga");
 var_dump($foo);
 
 ?>
---EXPECTF--
+--EXPECT--
 array(2) {
   ["qwerty"]=>
   string(5) "bunga"

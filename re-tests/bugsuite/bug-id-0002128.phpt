@@ -7,7 +7,6 @@ var_dump($out);
 $out = exec('echo foobar');
 var_dump($out);
 ?>
-
---EXPECTF--
+--EXPECT--
 string(6) "barfoo"
 string(6) "foobar"

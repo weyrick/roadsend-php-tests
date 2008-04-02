@@ -62,7 +62,7 @@ echo "o5: ".((object)$a == (object)$b)."\n";
 
 
 ?>
---EXPECTF--
+--EXPECT--
 Two instances of the same class
 o1 == o2 : TRUE
 o1 != o2 : FALSE

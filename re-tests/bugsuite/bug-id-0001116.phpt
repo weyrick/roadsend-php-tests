@@ -31,7 +31,7 @@ print "Testing really cool arrays ;)\n";
 print "COUNT_NORMAL: should be 3, is ".count($arr, COUNT_NORMAL)."\n";
 print "COUNT_RECURSIVE: should be 13, is ".count($arr, COUNT_RECURSIVE)."\n";
 ?>
---EXPECTF--
+--EXPECT--
 Testing NULL...
 COUNT_NORMAL: should be 0, is 0
 COUNT_RECURSIVE: should be 0, is 0

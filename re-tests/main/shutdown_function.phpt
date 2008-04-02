@@ -18,7 +18,7 @@ register_shutdown_function('shut2');
 echo "still running, last command\n";
 
 ?>
---EXPECTF--
+--EXPECT--
 still running, last command
 shutdown complete
 just kidding! this is really it though

@@ -8,7 +8,6 @@ var_dump($a);
 
 ?>
 
-
---EXPECTF--
+--EXPECT--
 float(0.8)
 

@@ -10,8 +10,7 @@ $test = "
 
 echo strip_tags($test);
 ?>
-
---EXPECTF--
+--EXPECT--
 
 
 first cell before < first cell after

@@ -11,7 +11,5 @@ foreach ($c as $k => $v) {
 echo "this should run, however\n";
 
 ?>
---EXPECTF--
-
-Warning: Invalid argument supplied for foreach() in /home/weyrick/workspace/pcc/bugs/tests/bug-id-0001076.php on line 4
+--EXPECT--
 this should run, however

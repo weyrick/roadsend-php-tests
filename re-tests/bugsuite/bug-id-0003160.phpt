@@ -23,8 +23,7 @@ $foo = new bar();
 $foo->raiseError();
 
 ?>
-
---EXPECTF--
+--EXPECT--
 this is keeping pweb from working. if the subclass overrides a static method, it can't call the method in its parent class.
 
 

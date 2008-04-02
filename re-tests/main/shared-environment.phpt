@@ -8,6 +8,5 @@ function foo() {
 } 
 foo();
 ?>
-
---EXPECTF--
+--EXPECT--
  my root dir is /home/pornmonger/

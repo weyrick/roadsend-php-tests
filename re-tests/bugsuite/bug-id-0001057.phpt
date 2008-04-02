@@ -16,8 +16,7 @@ var_dump($a);
 
 
 ?>
-
---EXPECTF--
+--EXPECT--
 0001057 allow blank class definitions
 object(bclass)#1 (1) {
   ["prop"]=>

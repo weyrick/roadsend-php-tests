@@ -46,7 +46,7 @@ $b->pub();
 //$b->priv();
 
 ?>
---EXPECTF--
+--EXPECT--
 in pub
 in prot
 in priv

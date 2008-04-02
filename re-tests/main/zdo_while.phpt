@@ -9,6 +9,5 @@ do {
 } while($i>0);
 ?>
 
-
---EXPECTF--
+--EXPECT--
 321

@@ -22,8 +22,7 @@ foreach ($a as $i) {
 }
 ?>
 
-
---EXPECTF--
+--EXPECT--
  disallow overriding scheme functions from php
 
  right now you can define a php function (con or list for example) and it will override the scheme function

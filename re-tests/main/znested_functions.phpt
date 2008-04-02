@@ -19,6 +19,5 @@ function G()
 
 G();
 ?>
-
---EXPECTF--
+--EXPECT--
 4 Hello 4

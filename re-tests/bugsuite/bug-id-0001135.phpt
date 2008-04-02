@@ -9,7 +9,7 @@ var_dump(sprintf("4 %10.5f\n", 1.1));
 printf("5 %10.5d\n", 1.1);
 var_dump(sprintf("6 %10.5d\n", 1.1));
 ?>
---EXPECTF--
+--EXPECT--
 1 1.10000e+0
 string(13) "2 1.10000e+0
 "

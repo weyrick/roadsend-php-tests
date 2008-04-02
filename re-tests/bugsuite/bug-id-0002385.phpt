@@ -79,8 +79,7 @@ for ($a=0; $a<5; $a++) {
   }
 }
 ?>
-
---EXPECTF--
+--EXPECT--
 continue with parens
 
 a: 0

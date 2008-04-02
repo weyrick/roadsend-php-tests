@@ -31,8 +31,7 @@ $zot = new foo();
 ?>
 
 
-
---EXPECTF--
+--EXPECT--
 0000731 parse error magically making a number negative
 
 -5

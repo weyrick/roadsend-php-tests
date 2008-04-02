@@ -39,7 +39,6 @@ function Write()
 }
 
 ?>
-
---EXPECTF--
+--EXPECT--
 we want this to not cause CFA flapping!  (too much optimization)
 

@@ -19,8 +19,7 @@ foocrement($foo);
 echo "$foo\n";
 
 ?>
-
---EXPECTF--
+--EXPECT--
 5foocrement
 6
 endcrement

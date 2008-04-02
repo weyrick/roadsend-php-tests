@@ -27,7 +27,7 @@ five\n";
 echo __LINE__."\n";
 
 ?>
---EXPECTF--
+--EXPECT--
 0003230: line numbers incorrect with multiline strings in double quotes
 4
 foo

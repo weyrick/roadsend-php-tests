@@ -27,8 +27,7 @@ $obj = 50;
 $obj = new MyDestructableClass();
 
 ?> 
-
---EXPECTF--
+--EXPECT--
 In constructor
 Destroying MyDestructableClass: 1
 In constructor

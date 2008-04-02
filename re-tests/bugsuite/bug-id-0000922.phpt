@@ -16,6 +16,5 @@ class NumberIterator
 NumberIterator::next();
 
 ?>
-
---EXPECTF--
+--EXPECT--
 I'm your wurst nightmare

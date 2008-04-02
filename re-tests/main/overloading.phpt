@@ -99,8 +99,7 @@ var_dump(isset($foo->n));
 
 var_dump($foo);
 ?>
-
---EXPECTF--
+--EXPECT--
 i1: 1
 i2: 1
 __isset called for [b]

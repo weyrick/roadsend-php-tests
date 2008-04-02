@@ -13,7 +13,7 @@ $obj->debugLog("foo");
 SM_fatalErrorPage("oops");
 
 ?>
---EXPECTF--
+--EXPECT--
 <html><body bgcolor=ffffff><br /><b><font color="red">
 UNKNOWN SITENAME (UNKNOWN SITEID) :: <br /></font><hr />
  SM_object:: foo<br />

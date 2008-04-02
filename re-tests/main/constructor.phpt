@@ -37,7 +37,7 @@ $baz = new cclass();
 echo "4\n";
 $baz->__construct();
 ?>
---EXPECTF--
+--EXPECT--
 1
 Constructor of aclass called
 2

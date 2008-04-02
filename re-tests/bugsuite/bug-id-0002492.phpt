@@ -75,8 +75,7 @@ var_dump($zot);
 
 
 ?>
-
---EXPECTF--
+--EXPECT--
  0002492: more array/reference blues
 
 this code is used in phpmyadmin to extract variables from GET/POST and make them global. the problem occurs when there is an array in one of them (because the script passed something like "foo[]=12&foo[]=13") and it recurses in the function.

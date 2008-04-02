@@ -26,8 +26,7 @@ fclose($fp);
 
 
 ?>
-
---EXPECTF--
+--EXPECT--
 test comparison of resources
 opened file
 5

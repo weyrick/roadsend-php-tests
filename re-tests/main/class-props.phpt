@@ -46,7 +46,7 @@ echo $b->bar1;
 echo $b->bar3;
 
 ?>
---EXPECTF--
+--EXPECT--
 init1init2init3object(Foo)#1 (3) {
   ["bar1"]=>
   string(5) "init1"

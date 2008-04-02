@@ -8,7 +8,7 @@ function foo($bar = array("a", "b", "c"))
 }
 foo();
 ?>
---EXPECTF--
+--EXPECT--
 array(3) {
   [0]=>
   string(1) "a"

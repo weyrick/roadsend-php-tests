@@ -81,7 +81,7 @@ foreach ($a as $v1) {
 }
 
 ?>
---EXPECTF--
+--EXPECT--
 grimble: 1
 grimble: 1
 grumble: 1

@@ -13,8 +13,7 @@ function error($msg) {
 error('meep');
 
 ?>
-
---EXPECTF--
+--EXPECT--
 0001092 able to override builtin function 'error'
 
 Note: This test only produces a warning, and then only when compiled.

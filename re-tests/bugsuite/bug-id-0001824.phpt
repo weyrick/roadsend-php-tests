@@ -21,7 +21,7 @@ $bar = $foo;
 endif;
 ?>
  
---EXPECTF--
+--EXPECT--
 Alternative syntax for control structures
 
 

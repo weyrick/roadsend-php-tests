@@ -44,8 +44,7 @@ $c->c3 = 9;
 print_r($c);
 
 ?>
-
---EXPECTF--
+--EXPECT--
 a Object
 (
     [a1] => 1

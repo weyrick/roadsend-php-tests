@@ -18,8 +18,7 @@ zammo("bar");
 
 
 
-
---EXPECTF--
+--EXPECT--
 3
 
 

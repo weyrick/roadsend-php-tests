@@ -18,6 +18,5 @@ $r = Ack(3,$n);
 print "Ack(3,$n): $r\n";
 
 ?>
-
---EXPECTF--
+--EXPECT--
 Ack(3,5): 253

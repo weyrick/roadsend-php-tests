@@ -55,7 +55,7 @@ echo $$foo . "\n";
 }
 foo();
 ?>
---EXPECTF--
+--EXPECT--
  When trying to compile:
 
 b

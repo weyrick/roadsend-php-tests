@@ -11,8 +11,7 @@ if ($dir = opendir("/etc")) {
 }
 
 ?>
-
---EXPECTF--
+--EXPECT--
 .
 ..
 profile

@@ -50,8 +50,7 @@ $bar = new foo();
 //bling::bling();
 
 ?>
-
---EXPECTF--
+--EXPECT--
 0000959 $this is null in constructor
 
 bling this is [this is class foo]

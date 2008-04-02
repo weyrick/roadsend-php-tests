@@ -19,8 +19,7 @@ echo "can you see the [{$this->var['test']}]?\n";
 $c = new testClass();
 
 ?>
-
---EXPECTF--
+--EXPECT--
 0000800 more string interpolation crazyness
 
 can you see the [fnord]?

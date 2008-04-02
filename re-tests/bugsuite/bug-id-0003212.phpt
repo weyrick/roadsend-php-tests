@@ -19,6 +19,5 @@ if ($one == $two) {
 }
 
 ?>
-
---EXPECTF--
+--EXPECT--
 not same

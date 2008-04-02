@@ -4,5 +4,5 @@
 <?php 
 echo "asdf" . (int)"foo" . "bar\n"; 
 ?>
---EXPECTF--
+--EXPECT--
 asdf0bar

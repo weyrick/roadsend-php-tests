@@ -18,6 +18,5 @@ while ($i < 2) {
 }
 
 ?>
-
---EXPECTF--
+--EXPECT--
 12

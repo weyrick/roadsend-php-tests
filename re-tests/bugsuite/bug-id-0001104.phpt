@@ -32,7 +32,7 @@ var_dump($c);
 array_pop($GLOBALS);
 
 ?>
---EXPECTF--
+--EXPECT--
 fubar
 array(3) {
   [0]=>

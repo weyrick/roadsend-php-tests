@@ -10,8 +10,7 @@ var_dump($a);
 ?>
 
 we coerce, they don't (anymore)
-
---EXPECTF--
+--EXPECT--
 int(12)
 
 we coerce, they don't (anymore)

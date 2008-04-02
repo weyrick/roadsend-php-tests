@@ -162,7 +162,7 @@ foreach ($a as $f) {
 
 
 ?>
---EXPECTF--
+--EXPECT--
 float(1.2)
 echo: 1.2
 printf(f): 1.200000

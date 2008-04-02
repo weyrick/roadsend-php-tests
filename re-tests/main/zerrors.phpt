@@ -75,7 +75,7 @@ echo "----\nvector d - fatal error\n";
 $d = scale_by_log($a, -2.5);
 
 ?>
---EXPECTF--
+--EXPECT--
 vector a
 Array
 (

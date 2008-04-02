@@ -27,8 +27,7 @@ while (list(,,$v) = each($a)) {
 }
 
 ?>
-
---EXPECTF--
+--EXPECT--
 key or value is optional in list()
 
 blah

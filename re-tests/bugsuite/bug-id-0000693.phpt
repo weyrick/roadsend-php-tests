@@ -30,7 +30,7 @@ while (cnt() < 10)
 
 
 ?>
---EXPECTF--
+--EXPECT--
 0000693 foreach and others with no braces cause parse error
 
 0, ASdf

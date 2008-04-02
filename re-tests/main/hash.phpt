@@ -40,8 +40,7 @@ var_dump($ahash);
 
 ?>
 
-
---EXPECTF--
+--EXPECT--
 64
 array(100) {
   [1]=>

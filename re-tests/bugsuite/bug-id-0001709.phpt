@@ -88,8 +88,7 @@ test_do();
 
 ?>
 
-
---EXPECTF--
+--EXPECT--
 string-port replacements aren't nesting properly
 '
 

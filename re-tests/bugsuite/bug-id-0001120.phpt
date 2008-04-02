@@ -19,8 +19,7 @@ while (($line = fgetcsv($fp, 1024)))
 fclose($fp);
 
 ?>
-
---EXPECTF--
+--EXPECT--
  array(7) {
   [0]=>
   string(3) "One"

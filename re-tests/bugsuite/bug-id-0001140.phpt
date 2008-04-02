@@ -15,7 +15,7 @@ var_dump(nl2br("\n\r\n\n\r\n\r\r\n\r\n"));
 var_dump(nl2br("\n\r\n\n\n\n\r\r\r\r\n\r"));
 
 ?>
---EXPECTF--
+--EXPECT--
 string(4) "test"
 string(0) ""
 string(0) ""

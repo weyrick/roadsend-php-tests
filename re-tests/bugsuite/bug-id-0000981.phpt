@@ -69,8 +69,7 @@ do {
 
 
 ?>
-
---EXPECTF--
+--EXPECT--
 continue accepts an optional integer argument
 
 

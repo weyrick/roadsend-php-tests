@@ -13,8 +13,7 @@ echo functest('1');
 
 
 ?>
-
---EXPECTF--
+--EXPECT--
 0000795 parse error on default function argument as a negative number
 
 -1

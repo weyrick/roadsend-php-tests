@@ -8,6 +8,5 @@ if (!ereg('(^|[^\])(_|%)', "hi")) {
 }
 
 ?>
-
---EXPECTF--
+--EXPECT--
 good

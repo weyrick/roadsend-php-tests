@@ -11,8 +11,7 @@ for ($i=0; $i<10; $i++) {
   eval($message);
   echo $i."\n";
 }
-
---EXPECTF--
+--EXPECT--
 hey
 0
 hey

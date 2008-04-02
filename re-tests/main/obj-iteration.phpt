@@ -76,8 +76,7 @@ foreach ($coll as $key => $val) {
 }
 
 ?>
-
---EXPECTF--
+--EXPECT--
 rewinding
 current: 1
 valid: 1

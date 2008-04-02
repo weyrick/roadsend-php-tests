@@ -30,8 +30,7 @@ for ($i=0; $i<=5; $i++)
 }
 echo "hi\n";
 ?>
-
---EXPECTF--
+--EXPECT--
 i=0
 In branch 0
 i=1

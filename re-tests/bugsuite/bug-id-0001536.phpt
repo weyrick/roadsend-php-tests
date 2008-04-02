@@ -27,7 +27,7 @@ define(ZOT, "wert");
 foo();
 
 ?>
---EXPECTF--
+--EXPECT--
 define() needs to happen like a normal statement, and still work as a
 default value.
 

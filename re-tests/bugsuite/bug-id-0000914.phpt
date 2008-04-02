@@ -19,7 +19,7 @@ print "the answer is: " . $bar->aprop . "\n";
 
 
 ?>
---EXPECTF--
+--EXPECT--
 object(foo)#1 (1) {
   ["aprop"]=>
   int(12)

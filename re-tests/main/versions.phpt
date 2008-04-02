@@ -8,7 +8,7 @@ echo substr(zend_version(), 0, 5)."\n";
 echo substr(phpversion(),0, 5)."\n";
 
 ?>
---EXPECTF--
+--EXPECT--
 5.2.5
 2.2.0
 5.2.5

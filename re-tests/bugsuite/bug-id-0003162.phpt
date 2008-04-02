@@ -21,8 +21,7 @@ $to = $UNIXTIME + $K;
 echo "$from - $to\n";
 
 ?>
-
---EXPECTF--
+--EXPECT--
 0003162: windows: string-> int conversion broken
 1104534826 - 1104534836
 1104534826 - 1104534836

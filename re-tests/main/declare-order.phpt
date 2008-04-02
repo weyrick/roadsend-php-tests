@@ -18,6 +18,6 @@ function hey($a = foo::a) {
 
 
 ?>
---EXPECTF--
+--EXPECT--
 this is the very top
 hello

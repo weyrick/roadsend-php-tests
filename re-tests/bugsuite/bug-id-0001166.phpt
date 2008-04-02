@@ -21,8 +21,7 @@ foreach ($a as $v) {
 
 ?>
 
-
---EXPECTF--
+--EXPECT--
 0001166 nested foreach problem
 
 Additional Information i'm sure this has to do with the internal array

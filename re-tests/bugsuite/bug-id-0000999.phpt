@@ -13,7 +13,6 @@ echo $b;
 }
 
 ?>
-
---EXPECTF--
+--EXPECT--
 0000999	continue in foreach does not advance array, causing infinite loop
 234

@@ -13,8 +13,7 @@ badDefault('hi');
 badDefault();
 
 ?>
-
---EXPECTF--
+--EXPECT--
 0000962 user defined functions with default values of false can fail
  	apparently for the same reason we can't have a default of #f for defbuiltins, user defined functions can't either:
 made it, a is hi

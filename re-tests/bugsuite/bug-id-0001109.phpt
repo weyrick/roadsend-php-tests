@@ -19,7 +19,7 @@ print "First value: ".$globalArray[0];
 print "\nDone\n";
 
 ?>
---EXPECTF--
+--EXPECT--
 val: v; key: k
 First value: k
 Done

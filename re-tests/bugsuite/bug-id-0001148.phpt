@@ -52,7 +52,7 @@ function test($v1, $v2) {
 }
 
 ?>
---EXPECTF--
+--EXPECT--
  TESTING COMPARE
 in php, checking 1 against 2
 1 < 2

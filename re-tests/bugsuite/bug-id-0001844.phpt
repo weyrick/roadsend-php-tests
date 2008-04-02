@@ -10,6 +10,6 @@ $a = "hi";
 var_dump($a);
 
 ?>
---EXPECTF--
+--EXPECT--
 segfault on string/array access
 

@@ -12,7 +12,7 @@ echo quoted_printable_decode("=FAwow-factor=C1=D0=D5=DD=C5=CE=CE=D9=C5=0A=
 =20=
 =D0=
 =D2=CF=C5=CB=D4=D9"); ?>
---EXPECTF--
+--EXPECT--
 Зwow-factorапущенные
  торговые проектыЗwow-factorапущенные
  торговые проекты

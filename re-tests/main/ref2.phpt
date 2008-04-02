@@ -15,6 +15,6 @@ $wibb[1] = 10;
 echo "$foo, $wibb[0], $wibb[1]\n";
 
 ?>
---EXPECTF--
+--EXPECT--
 5, 6
 10, 9, 10

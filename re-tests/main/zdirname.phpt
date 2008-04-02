@@ -19,8 +19,7 @@
 //	check_dirname("foobar///");
 	check_dirname("c:\foo");
 ?>
-
---EXPECTF--
+--EXPECT--
 dirname(/foo) == /
 dirname(/foo/bar) == /foo
 dirname(d:\foo\bar.inc) == .

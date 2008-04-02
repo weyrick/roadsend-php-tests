@@ -20,6 +20,6 @@ echo ("foo:" . ($a & $b & $c) . ":foo\n");
 
 
 ?>
---EXPECTF--
+--EXPECT--
 the angle of the 7.
 foo:1:foo

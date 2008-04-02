@@ -6,7 +6,6 @@
 ?>
 
 <?php echo "This is a test" ?>
-
---EXPECTF--
+--EXPECT--
 This is a test
 This is a test

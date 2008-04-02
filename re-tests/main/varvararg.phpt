@@ -31,6 +31,5 @@ $bing = "printme\n";
 zot("bing");
 
 ?>
-
---EXPECTF--
+--EXPECT--
 flop2printme

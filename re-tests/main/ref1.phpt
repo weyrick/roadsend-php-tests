@@ -13,5 +13,5 @@ echo "$foo, $zot, $bar\n";
 
 
 ?>
---EXPECTF--
+--EXPECT--
 8, 9, 9

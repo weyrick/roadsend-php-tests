@@ -29,7 +29,7 @@ $afoo->zot();
 
 
 ?>
---EXPECTF--
+--EXPECT--
 unable to foreach on a class variable
 parse error on this code in a class method:
 

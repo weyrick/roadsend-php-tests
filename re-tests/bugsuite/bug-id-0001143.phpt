@@ -15,7 +15,7 @@ var_dump(@strpos("a", ""));
 var_dump(@strpos("", "a"));
 var_dump(@strpos("\\\\a", "\\a"));
 ?>
---EXPECTF--
+--EXPECT--
 int(0)
 int(5)
 int(5)
