@@ -9,7 +9,7 @@ it's using stdio's fputs(), so it stops at the first 0 in the string:
 
 $baz = fopen("/dev/zero", "r");
 $foo = fread($baz, 8192);
-$bar = fopen("woot", "wb");
+$bar = fopen("/tmp/woot", "wb");
 fwrite($bar, $foo);
 fclose($bar);
 echo filesize("woot") . "\n";
