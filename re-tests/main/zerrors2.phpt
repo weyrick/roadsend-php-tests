@@ -9,7 +9,7 @@ error_reporting(0);
 // user defined error handling function
 function userErrorHandler ($errno, $errmsg, $filename, $linenum, $vars) {
     // timestamp for the error entry
-    $dt = date("Y-m-d H (T)");
+//    $dt = date("Y-m-d H (T)");
 
     // define an assoc array of error string
     // in reality the only entries we should
@@ -31,7 +31,7 @@ function userErrorHandler ($errno, $errmsg, $filename, $linenum, $vars) {
     $user_errors = array(E_USER_ERROR, E_USER_WARNING, E_USER_NOTICE);
     
     $err = "<errorentry>\n";
-    $err .= "\t<datetime>".$dt."</datetime>\n";
+//    $err .= "\t<datetime>".$dt."</datetime>\n";
     $err .= "\t<errornum>".$errno."</errornum>\n";
     $err .= "\t<errortype>".$errortype[$errno]."</errortype>\n";
     $err .= "\t<errormsg>".$errmsg."</errormsg>\n";
@@ -105,21 +105,18 @@ $t3 = distance($a,$b)."\n";
 ?>
 --EXPECT--
 <errorentry>
-	<datetime>2008-04-02 13 (CEST)</datetime>
 	<errornum>256</errornum>
 	<errortype>User Error</errortype>
 	<errormsg>Vectors need to be of the same size</errormsg>
 </errorentry>
 
 <errorentry>
-	<datetime>2008-04-02 13 (CEST)</datetime>
 	<errornum>256</errornum>
 	<errortype>User Error</errortype>
 	<errormsg>Incorrect parameters, arrays expected</errormsg>
 </errorentry>
 
 <errorentry>
-	<datetime>2008-04-02 13 (CEST)</datetime>
 	<errornum>512</errornum>
 	<errortype>User Warning</errortype>
 	<errormsg>Coordinate 2 in vector 1 is not a number, using zero</errormsg>

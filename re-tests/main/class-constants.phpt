@@ -16,8 +16,7 @@ echo MyClass::constant . "\n";
 $class = new MyClass();
 $class->showConstant();
 
-?> 
+?>
 --EXPECT--
 constant value
 constant value
- 

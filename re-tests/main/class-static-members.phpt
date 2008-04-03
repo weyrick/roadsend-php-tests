@@ -6,6 +6,7 @@
 class foo {
     static $p1 = array(1, 2, 3);
     static public $p2 = "foo";
+    public static $boolfalse = false;
     protected static $p5 = "bar";
     private static $p6 = "baz";
     static $p7 = 0;
@@ -18,6 +19,8 @@ class bar extends foo {
     static $p2 = "bar";
     static $p3 = 2;
 }
+
+echo "false: ".foo::$boolfalse."\n";
 
 $o1 = new foo();
 print_r($o1);
@@ -70,6 +73,7 @@ print $bar->fooStatic() . "\n";
 
 ?>
 --EXPECT--
+false: 
 foo Object
 (
 )

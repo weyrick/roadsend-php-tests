@@ -30,7 +30,9 @@ class Control {
     static public $verbosity = 1;
     static public $pccBinary;
     static public $pccVersion;
+    static public $testRoot;
     static public $outDir;
+    static public $singleMode = false;
     
     public static function log($level, $msg) {
         if (self::$verbosity >= $level)
@@ -114,8 +116,12 @@ class TestSuite {
        
         switch ($GLOBALS['argv'][1]) {
            case '-d':
-               $testDir = $GLOBALS['argv'][2];
-               $this->findTestsInDirectory($testDir);
+               Control::$testRoot = $GLOBALS['argv'][2];
+               $this->findTestsInDirectory(Control::$testRoot);
+               break;
+           case '-f':
+               Control::$singleMode = true;
+               $this->testList[] = new PHP_Test($GLOBALS['argv'][2]);
                break;
            default:
                Control::bomb('invalid option: '.$GLOBALS['argv'][1]);
@@ -130,7 +136,7 @@ class TestSuite {
        
         Control::log(1,sizeof($this->testList).' total tests');
         foreach ($this->testList as $testH) {
-            echo substr($testH->tptFileName,strlen($testDir)).': ';
+            echo substr($testH->tptFileName,strlen(Control::$testRoot)).': ';
             $testH->runTest();
         }
 
@@ -141,8 +147,11 @@ class TestSuite {
     public function showResults() {
         echo "------------- INTERPRETER FAILURES -------------\n";
         foreach ($this->testList as $testH) {
-            if ($testH->interpetResult == PHP_Test::RESULT_FAIL)
+            if ($testH->interpetResult == PHP_Test::RESULT_FAIL) {
                 echo "{$testH->tptFileName}\n";
+                if (Control::$singleMode)
+                    echo $testH->iDiffOutput;
+            }
         }
     }
 
@@ -156,15 +165,17 @@ class PHP_Test {
     const RESULT_UNKNOWN = 3;
     
     public $tptFileName;
-    protected $testFileName;
-    protected $ioutFileName; // interpreted output
-    protected $coutFileName; // compiled output
-    protected $expectFileName;
-    protected $idiffFileName;
-    protected $cdiffFileName;
+    public $testFileName;
+    public $ioutFileName; // interpreted output
+    public $coutFileName; // compiled output
+    public $expectFileName;
+    public $idiffFileName;
+    public $cdiffFileName;
+    public $idiffOutput;
+    public $cdiffOutput;
     
-    protected $iOutput;
-    protected $cOutput;
+    public $iOutput;
+    public $cOutput;
     
     protected $templateData;
     protected $sectionData;
@@ -232,7 +243,12 @@ class PHP_Test {
 
     protected function doInterpreterTest() {
 
-        $cmd = Control::$pccBinary.' -f '.$this->testFileName;
+        if (defined('ROADSEND_PHP')) {
+            $cmd = Control::$pccBinary.' -I '.dirname($this->tptFileName).' -f '.$this->testFileName;
+        }
+        else {
+            // XXX do zend command here
+        }
         Control::log(2, $cmd);
         $this->iOutput = `$cmd`;
         
@@ -252,8 +268,8 @@ class PHP_Test {
 
         $cmd = 'diff '.$this->expectFileName.' '.$this->ioutFileName;
         Control::log(2, $cmd);
-        $op = `$cmd`;
-        file_put_contents($this->idiffFileName, $op);
+        $this->iDiffOutput = `$cmd`;
+        file_put_contents($this->idiffFileName, $this->iDiffOutput);
         
     }
     

@@ -5,6 +5,9 @@
 
 all: re-tests
 
+failures: clean-output
+	./dotest -d ./known-failures/ ./re-output
+	
 re-tests-i: clean-output
 	pcc -f ./dotest.php -- -d ./re-tests/ ./re-output
 
