@@ -33,8 +33,6 @@ class Control {
     static public $testRoot;
     static public $outDir;
     static public $singleMode = false;
-    // remove Warning: lines from templates before comparing output
-    static public $removeWarnings = true;
     
     public static function log($level, $msg) {
         if (self::$verbosity >= $level)
