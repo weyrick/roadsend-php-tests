@@ -15,6 +15,8 @@ else
 
 
 ?>
---EXPECT--
+--EXPECTF--
 bar
+
+Warning: Not enough arguments for function function_exists: 1 required, 0 provided in %s on line %d
 bar

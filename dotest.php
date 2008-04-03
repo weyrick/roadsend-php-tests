@@ -176,6 +176,8 @@ class PHP_Test {
     
     public $iOutput;
     public $cOutput;
+
+    protected $expectType = 'EXPECT';
     
     protected $templateData;
     protected $sectionData;
@@ -216,6 +218,16 @@ class PHP_Test {
         if (empty($this->sectionData['FILE']))
             Control::bomb('Invalid test template: no FILE section');
 
+        if (isset($this->sectionData['EXPECTF'])) {
+            $this->expectType = 'EXPECTF';
+        }
+        elseif (isset($this->sectionData['EXPECTREGEX'])) {
+            $this->expectType = 'EXPECTREGEX';
+        }
+        elseif (!isset($this->sectionData['EXPECT'])) {
+            Control::bomb('no expect data');
+        }
+        
         // work files
         $bName = Control::$outDir.basename($this->tptFileName, '.phpt');
         $this->testFileName = $bName.'.php';
@@ -236,8 +248,8 @@ class PHP_Test {
         if (!file_put_contents($this->testFileName, $this->sectionData['FILE']))
             Control::bomb("unable to write .php test file (FILE section): ".$this->testFileName);
         
-        if (!file_put_contents($this->expectFileName, $this->sectionData['EXPECT']))
-            Control::bomb("unable to write expect test file (EXPECT section): ".$this->expectFileName);
+        if (!file_put_contents($this->expectFileName, $this->sectionData[$this->expectType]))
+            Control::bomb("unable to write expect test file ({$this->expectType} section): ".$this->expectFileName);
         
     }
 
@@ -250,16 +262,42 @@ class PHP_Test {
             // XXX do zend command here
         }
         Control::log(2, $cmd);
-        $this->iOutput = `$cmd`;
+        $this->iOutput = trim(`$cmd`);
         
         if (!file_put_contents($this->ioutFileName, $this->iOutput))
-            Control::bomb("unable to write interpreter output file".$this->ioutFileName);
+            Control::bomb("unable to write interpreter output file: ".$this->ioutFileName);
 
-        if ($this->iOutput != $this->sectionData['EXPECT']) {
-            $this->interpetResult = self::RESULT_FAIL;
-        }
-        else {
-            $this->interpetResult = self::RESULT_PASS;
+        // compare output
+        if ($this->expectType != 'EXPECT')
+            $re_expect = trim($this->sectionData[$this->expectType]);
+        switch ($this->expectType) {
+            case 'EXPECT':
+                if ($this->iOutput != trim($this->sectionData['EXPECT'])) {
+                    $this->interpetResult = self::RESULT_FAIL;
+                }
+                else {
+                    $this->interpetResult = self::RESULT_PASS;
+                }
+                break;
+            case 'EXPECTF':
+                $re_expect = preg_quote($re_expect, '/');
+                $re_expect = str_replace('%e', '\\' . DIRECTORY_SEPARATOR, $re_expect);
+                $re_expect = str_replace('%s', '[^\r\n]+', $re_expect);
+                $re_expect = str_replace('%a', '.+', $re_expect);
+                $re_expect = str_replace('%w', '\s*', $re_expect);
+                $re_expect = str_replace('%i', '[+-]?\d+', $re_expect);
+                $re_expect = str_replace('%d', '\d+', $re_expect);
+                $re_expect = str_replace('%x', '[0-9a-fA-F]+', $re_expect);
+                $re_expect = str_replace('%f', '[+-]?\.?\d+\.?\d*(?:E-?\d+)?', $re_expect);
+                $re_expect = str_replace('%c', '.', $re_expect);
+            case 'EXPECTREGEX':
+                if (preg_match("/^$re_expect\$/s", trim($this->iOutput))) {
+                    $this->interpetResult = self::RESULT_PASS;
+                }
+                else {
+                    $this->interpetResult = self::RESULT_FAIL;
+                }
+                break;
         }
         
     }

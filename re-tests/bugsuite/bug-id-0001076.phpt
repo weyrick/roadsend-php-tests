@@ -11,5 +11,6 @@ foreach ($c as $k => $v) {
 echo "this should run, however\n";
 
 ?>
---EXPECT--
+--EXPECTF--
+Warning: Not an array or iterable object in foreach, variable is NULL in %s on line %d
 this should run, however

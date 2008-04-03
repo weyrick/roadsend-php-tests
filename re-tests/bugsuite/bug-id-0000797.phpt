@@ -8,8 +8,9 @@ class testClass {
 
 }
 
+echo "ok\n";
 
 ?>
 
 --EXPECT--
-
+ok

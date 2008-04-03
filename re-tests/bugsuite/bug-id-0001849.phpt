@@ -78,7 +78,7 @@ Array
     [MANTIS_ERROR] => Array
         (
             [ERROR_GENERIC] => An error occurred during this action.  You may wish to report this error to your local administrator.
-            [ERROR_SQL] => SQL error detected.  Please report this to
+            [ERROR_SQL] => SQL error detected.  Please report this to 
             [ERROR_REPORT] => There was an error in your report.
             [ERROR_NO_FILE_SPECIFIED] => No file specified
             [ERROR_FILE_DISALLOWED] => The file type is disallowed
