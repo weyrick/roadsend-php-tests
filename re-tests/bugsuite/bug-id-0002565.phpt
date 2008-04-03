@@ -12,7 +12,7 @@ $foo = fread($baz, 8192);
 $bar = fopen("/tmp/woot", "wb");
 fwrite($bar, $foo);
 fclose($bar);
-echo filesize("woot") . "\n";
+echo filesize("/tmp/woot") . "\n";
 
 ?>
 --EXPECT--
