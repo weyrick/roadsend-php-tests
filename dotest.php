@@ -145,14 +145,21 @@ class TestSuite {
     }
 
     public function showResults() {
-        echo "------------- INTERPRETER FAILURES -------------\n";
+        $iHeader = false;
+        $cHeader = false;
         foreach ($this->testList as $testH) {
             if ($testH->interpetResult == PHP_Test::RESULT_FAIL) {
+                if (!$iHeader) {
+                    echo "------------- INTERPRETER FAILURES -------------\n";
+                    $iHeader = true;
+                }
                 echo "{$testH->tptFileName}\n";
                 if (Control::$singleMode)
                     echo $testH->iDiffOutput;
             }
         }
+        if (!$iHeader && !$cHeader)
+            echo "---- ALL TESTS PASSED ----\n";
     }
 
 }
@@ -199,7 +206,7 @@ class PHP_Test {
         $curSection = '';
         for ($i=0; $i <= sizeof($this->templateData); $i++) {
             $line = $this->templateData[$i];
-            if (preg_match('/^--([A-Z]+)--/',$line,$m)) {
+            if (preg_match('/^--([A-Z0-9:]+)--/',$line,$m)) {
                 $curSection = strtoupper($m[1]);
                 continue;
             }
@@ -214,6 +221,16 @@ class PHP_Test {
             }
         }
 
+        // pick the right expect data for our platform
+        $wSize = PHP_INT_SIZE*8;
+        if (isset($this->sectionData['EXPECT:'.$wSize]))
+            $this->sectionData['EXPECT'] = $this->sectionData['EXPECT:'.$wSize];
+        if (isset($this->sectionData['EXPECTF:'.$wSize]))
+            $this->sectionData['EXPECTF'] = $this->sectionData['EXPECTF:'.$wSize];
+        if (isset($this->sectionData['EXPECTREGEX:'.$wSize]))
+            $this->sectionData['EXPECTREGEX'] = $this->sectionData['EXPECTREGEX:'.$wSize];
+
+
         // verify we have code to write
         if (empty($this->sectionData['FILE']))
             Control::bomb('Invalid test template: no FILE section');
@@ -225,6 +242,7 @@ class PHP_Test {
             $this->expectType = 'EXPECTREGEX';
         }
         elseif (!isset($this->sectionData['EXPECT'])) {
+            print_r($this->sectionData);
             Control::bomb('no expect data');
         }
         
