@@ -18,7 +18,13 @@ $j = $j * 1001;
 var_dump($i,$j);
 
 ?>
---EXPECT--
+--EXPECT:32--
+int(10000000)
+float(1.001E+10)
+int(10000000)
+float(1.001E+10)
+float(1.001E+10)
+--EXPECT:64--
 int(10000000)
 int(10010000000)
 int(10000000)
