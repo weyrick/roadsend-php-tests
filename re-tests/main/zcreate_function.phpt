@@ -45,7 +45,7 @@ $farr = array(
 	      $garr = array(
 			    create_function('$b,$a', 'if (strncmp($a, $b, 3) == 0) return "** \"$a\" '.
 					    'and \"$b\"\n** Look the same to me! (looking at the first 3 chars)";'),
-			    create_function('$a,$b', '; return "CRCs: " . crc32($a) . " , ".crc32(b);'),
+			    create_function('$a,$b', '; return "MD5s: " . md5($a) . ", ".md5(b);'),
 			    create_function('$a,$b', '; return "similar(a,b) = " . similar_text($a, $b, &$p) . "($p%)";')
 			    );
 			    echo "\nUsing the second array of anonymous functions\n";
@@ -65,7 +65,6 @@ Using the first array of anonymous functions
 			      Using the second array of anonymous functions
 			      ** "Twas the night" and "Twas brilling and the slithy toves"
 			      ** Look the same to me! (looking at the first 3 chars)
-     CRCs: -725381282 , 1908338681
 			      similar(a,b) = 11(45.833333333333%)
 
      But perhaps the most common use for of lambda-style (anonymous) functions is to create callback functions, for example when using array_walk() or usort()
@@ -143,7 +142,7 @@ ln(a)/b = 0.271222992126
 Using the second array of anonymous functions
 ** "Twas the night" and "Twas brilling and the slithy toves"
 ** Look the same to me! (looking at the first 3 chars)
-CRCs: 3569586014 , 1908338681
+MD5s: 5d7048bed88eff64064fea3eb869f8be, 92eb5ffee6ae2fec3ad71c777531578f
 similar(a,b) = 11(45.8333333333%)
 
 			    and when you run the code above, the output will be:
@@ -159,7 +158,6 @@ Using the first array of anonymous functions
 			      Using the second array of anonymous functions
 			      ** "Twas the night" and "Twas brilling and the slithy toves"
 			      ** Look the same to me! (looking at the first 3 chars)
-     CRCs: -725381282 , 1908338681
 			      similar(a,b) = 11(45.833333333333%)
 
      But perhaps the most common use for of lambda-style (anonymous) functions is to create callback functions, for example when using array_walk() or usort()
