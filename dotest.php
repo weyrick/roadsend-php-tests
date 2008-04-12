@@ -169,13 +169,18 @@ class PHP_Test {
     const RESULT_PASS = 0;
     const RESULT_FAIL = 1;
     const RESULT_SKIP = 2;
-    const RESULT_UNKNOWN = 3;
+    const RESULT_BUILDFAIL = 3;
+    const RESULT_UNKNOWN = 4;
+
+    const INTERPRETER = 0;
+    const COMPILER = 1;
     
     public $tptFileName;
     public $testFileName;
     public $ioutFileName; // interpreted output
     public $coutFileName; // compiled output
     public $expectFileName;
+    public $buildFileName;
     public $idiffFileName;
     public $cdiffFileName;
     public $idiffOutput;
@@ -250,6 +255,7 @@ class PHP_Test {
         $bName = Control::$outDir.basename($this->tptFileName, '.phpt');
         $this->testFileName = $bName.'.php';
         $this->expectFileName = $bName.'.expect';
+        $this->buildFileName = $bName.'.build.out';
         $this->ioutFileName = $bName.'.i.out';
         $this->coutFileName = $bName.'.c.out';
         $this->idiffFileName = $bName.'.i.diff';
@@ -271,30 +277,49 @@ class PHP_Test {
         
     }
 
-    protected function doInterpreterTest() {
+    protected function executeTest($type) {
 
-        if (defined('ROADSEND_PHP')) {
-            $cmd = Control::$pccBinary.' -I '.dirname($this->tptFileName).' -f '.$this->testFileName;
+        if ($type == self::INTERPRETER) {
+            
+            if (defined('ROADSEND_PHP')) {
+                $cmd = Control::$pccBinary.' -I '.dirname($this->tptFileName).' -f '.$this->testFileName;
+            }
+            else {
+            // XXX do zend command here
+            }
+
+            // setup output vars
+            $output =& $this->iOutput;
+            $outFileName =& $this->ioutFileName;
+            $result =& $this->interpetResult;
+            
         }
         else {
-            // XXX do zend command here
+            // compiled executable
+            $cmd = Control::$outDir.basename($this->tptFileName, '.phpt');
+
+            // compiler output vars
+            $output =& $this->cOutput;
+            $outFileName =& $this->coutFileName;
+            $result =& $this->compileResult;
         }
+
         Control::log(2, $cmd);
-        $this->iOutput = trim(`$cmd`);
-        
-        if (!file_put_contents($this->ioutFileName, $this->iOutput))
-            Control::bomb("unable to write interpreter output file: ".$this->ioutFileName);
+        $output = trim(`$cmd`);
+
+        if (!file_put_contents($outFileName, $output))
+            Control::bomb("unable to write output file: ".$outFileName);
 
         // compare output
         if ($this->expectType != 'EXPECT')
             $re_expect = trim($this->sectionData[$this->expectType]);
         switch ($this->expectType) {
             case 'EXPECT':
-                if ($this->iOutput != trim($this->sectionData['EXPECT'])) {
-                    $this->interpetResult = self::RESULT_FAIL;
+                if ($output != trim($this->sectionData['EXPECT'])) {
+                    $result = self::RESULT_FAIL;
                 }
                 else {
-                    $this->interpetResult = self::RESULT_PASS;
+                    $result = self::RESULT_PASS;
                 }
                 break;
             case 'EXPECTF':
@@ -309,32 +334,62 @@ class PHP_Test {
                 $re_expect = str_replace('%f', '[+-]?\.?\d+\.?\d*(?:E-?\d+)?', $re_expect);
                 $re_expect = str_replace('%c', '.', $re_expect);
             case 'EXPECTREGEX':
-                if (preg_match("/^$re_expect\$/s", trim($this->iOutput))) {
-                    $this->interpetResult = self::RESULT_PASS;
+                if (preg_match("/^$re_expect\$/s", trim($output))) {
+                    $result = self::RESULT_PASS;
                 }
                 else {
-                    $this->interpetResult = self::RESULT_FAIL;
+                    $result = self::RESULT_FAIL;
                 }
                 break;
         }
         
     }
 
-    protected function writeInterpreterDiff() {
+    protected function writeDiff($type) {
 
-        $cmd = 'diff '.$this->expectFileName.' '.$this->ioutFileName;
-        Control::log(2, $cmd);
-        $this->iDiffOutput = `$cmd`;
-        file_put_contents($this->idiffFileName, $this->iDiffOutput);
+        if ($type == self::INTERPRETER) {
+            $cmd = 'diff '.$this->expectFileName.' '.$this->ioutFileName;
+            Control::log(2, $cmd);
+            $this->iDiffOutput = `$cmd`;
+            file_put_contents($this->idiffFileName, $this->iDiffOutput);
+        }
+        else {
+            $cmd = 'diff '.$this->expectFileName.' '.$this->coutFileName;
+            Control::log(2, $cmd);
+            $this->cDiffOutput = `$cmd`;
+            file_put_contents($this->cdiffFileName, $this->cDiffOutput);
+        }
         
     }
     
-    protected function doCompilerTest() {
+    protected function doCompilerBuild() {
 
+        // XXX look at section for pcc args
+        $cmd = Control::$pccBinary.' -v -I '.dirname($this->tptFileName).' '.$this->testFileName;
+        Control::log(2, $cmd);
+        $process = popen($cmd,'r');
+        if (is_resource($process)) {
+
+            $bOutput = '';
+            while(!feof($process)) {
+                $bOutput .= fgets($process);
+            }
+
+            $return_value = pclose($process);
+
+            file_put_contents($this->buildFileName, $bOutput);
+
+            if ($return_value != 0)
+                $this->compileResult = self::RESULT_BUILDFAIL;
+
+        }
+        else {
+            // couldn't open compiler process
+            Command::bomb("unable to run compile command:\n$cmd");
+        }
 
     }
 
-    
     public function runTest() {
         
         $this->parseTest();
@@ -348,19 +403,32 @@ class PHP_Test {
         Control::flush();
         
         // do interpreter test
-        $this->doInterpreterTest();
+        $this->executeTest(self::INTERPRETER);
 
         if ($this->interpetResult == self::RESULT_FAIL)
-            $this->writeInterpreterDiff();
+            $this->writeDiff(self::INTERPRETER);
 
-        echo ($this->interpetResult == PHP_Test::RESULT_PASS) ? "PASS " : "FAIL ";
-        echo "\n";
+        echo ($this->interpetResult == self::RESULT_PASS) ? "PASS " : "FAIL ";
         
         // do compiled test
         if (defined('ROADSEND_PHP')) {
-            $this->doCompilerTest();
+            echo "   BUILD: ";
+            Control::flush();
+            $this->doCompilerBuild();
+            if ($this->compileResult != self::RESULT_BUILDFAIL) {
+                echo "OK    RUN: ";
+                Control::flush();
+                $this->executeTest(self::COMPILER);
+                if ($this->interpetResult == self::RESULT_FAIL)
+                    $this->writeDiff(self::INTERPRETER);
+                echo ($this->compileResult == self::RESULT_PASS) ? "PASS " : "FAIL ";
+            }
+            else {
+                echo "FAIL";
+            }
         }
         
+        echo "\n";
         
     }
     
