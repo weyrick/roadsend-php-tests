@@ -145,20 +145,39 @@ class TestSuite {
     }
 
     public function showResults() {
-        $iHeader = false;
-        $cHeader = false;
         foreach ($this->testList as $testH) {
-            if ($testH->interpetResult == PHP_Test::RESULT_FAIL) {
-                if (!$iHeader) {
-                    echo "------------- INTERPRETER FAILURES -------------\n";
-                    $iHeader = true;
-                }
+            if ($testH->interpetResult == PHP_Test::RESULT_FAIL)
+                $iFail[] = $testH;
+            if ($testH->compileResult == PHP_Test::RESULT_BUILDFAIL)
+                $bFail[] = $testH;
+            if ($testH->compileResult == PHP_Test::RESULT_FAIL)
+                $cFail[] = $testH;
+        }
+        if (sizeof($iFail)) {
+            echo "------------- INTERPRETER FAILURES -------------\n";
+            foreach ($iFail as $testH) {
                 echo "{$testH->tptFileName}\n";
                 if (Control::$singleMode)
                     echo $testH->iDiffOutput;
             }
         }
-        if (!$iHeader && !$cHeader)
+        if (sizeof($bFail)) {
+            echo "------------- BUILD FAILURES -------------\n";
+            foreach ($bFail as $testH) {
+                echo "{$testH->tptFileName}\n";
+                if (Control::$singleMode)
+                    echo $testH->buildOutput;
+            }
+        }
+        if (sizeof($cFail)) {
+            echo "------------- COMPILE RUN FAILURES -------------\n";
+            foreach ($cFail as $testH) {
+                echo "{$testH->tptFileName}\n";
+                if (Control::$singleMode)
+                    echo $testH->cDiffOutput;
+            }
+        }
+        if (empty($iFail)&&empty($bFail)&&empty($cFail))
             echo "---- ALL TESTS PASSED ----\n";
     }
 
@@ -185,6 +204,7 @@ class PHP_Test {
     public $cdiffFileName;
     public $idiffOutput;
     public $cdiffOutput;
+    public $buildOutput;
     
     public $iOutput;
     public $cOutput;
@@ -370,18 +390,23 @@ class PHP_Test {
         $process = popen($cmd,'r');
         if (is_resource($process)) {
 
-            $bOutput = '';
+            $this->buildOutput = '';
             while(!feof($process)) {
-                $bOutput .= fgets($process);
+                $this->buildOutput .= fgets($process);
             }
 
             $return_value = pclose($process);
 
-            file_put_contents($this->buildFileName, $bOutput);
+            file_put_contents($this->buildFileName, $this->buildOutput);
 
-            if ($return_value != 0)
+            if ($return_value != 0) {
                 $this->compileResult = self::RESULT_BUILDFAIL;
-
+            }
+            else {
+                // release build output mem if we aren't using it
+                unset($this->buildOutput);
+            }
+            
         }
         else {
             // couldn't open compiler process
@@ -419,8 +444,8 @@ class PHP_Test {
                 echo "OK    RUN: ";
                 Control::flush();
                 $this->executeTest(self::COMPILER);
-                if ($this->interpetResult == self::RESULT_FAIL)
-                    $this->writeDiff(self::INTERPRETER);
+                if ($this->compileResult == self::RESULT_FAIL)
+                    $this->writeDiff(self::COMPILER);
                 echo ($this->compileResult == self::RESULT_PASS) ? "PASS " : "FAIL ";
             }
             else {
