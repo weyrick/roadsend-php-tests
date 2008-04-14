@@ -26,7 +26,11 @@
  */
 
 class Control {
-    
+
+    const GREEN = 32;
+    const RED = 31;
+
+    static public $useColor = true;
     static public $verbosity = 1;
     static public $pccBinary;
     static public $pccVersion;
@@ -65,6 +69,13 @@ class Control {
 
     public static function flush() {
         fflush(STDOUT);
+    }
+
+    public static function colorMsg($c, $msg) {
+        if (self::$useColor)
+            echo "\033[{$c};1m{$msg}\033[0m";
+        else
+            echo $msg;
     }
     
 }
@@ -276,8 +287,11 @@ class PHP_Test {
         $this->testFileName = $bName.'.php';
         $this->expectFileName = $bName.'.expect';
         $this->buildFileName = $bName.'.build.out';
+        $this->buildErrFileName = $bName.'.build.err';
         $this->ioutFileName = $bName.'.i.out';
         $this->coutFileName = $bName.'.c.out';
+        $this->ierrFileName = $bName.'.i.err';
+        $this->cerrFileName = $bName.'.c.err';
         $this->idiffFileName = $bName.'.i.diff';
         $this->cdiffFileName = $bName.'.c.diff';
         
@@ -312,7 +326,7 @@ class PHP_Test {
             $output =& $this->iOutput;
             $outFileName =& $this->ioutFileName;
             $result =& $this->interpetResult;
-            
+            $errFileName =& $this->ierrFileName;
         }
         else {
             // compiled executable
@@ -322,10 +336,28 @@ class PHP_Test {
             $output =& $this->cOutput;
             $outFileName =& $this->coutFileName;
             $result =& $this->compileResult;
+            $errFileName =& $this->cerrFileName;
         }
 
+        $descriptorspec = array(
+            1 => array("pipe", "w"),  // stdout
+            2 => array("file", $errFileName,"w")   // stderr
+        );
+
         Control::log(2, $cmd);
-        $output = trim(`$cmd`);
+        $process = proc_open($cmd, $descriptorspec, $pipes);
+        if (!is_resource($process)) {
+            Control::bomb("unable to execute test");
+        }
+
+        $output = '';
+        while(!feof($pipes[1])) {
+            $output .= fgets($pipes[1]);
+        }
+        fclose($pipes[1]);
+
+        $return_value = proc_close($process);
+        $output = trim($output);
 
         if (!file_put_contents($outFileName, $output))
             Control::bomb("unable to write output file: ".$outFileName);
@@ -385,17 +417,23 @@ class PHP_Test {
     protected function doCompilerBuild() {
 
         // XXX look at section for pcc args
+
+        $descriptorspec = array(
+            1 => array("pipe", "w"),  // stdout
+            2 => array("file", $this->buildErrFileName,"w")   // stderr
+        );
+
         $cmd = Control::$pccBinary.' -v -I '.dirname($this->tptFileName).' '.$this->testFileName;
         Control::log(2, $cmd);
-        $process = popen($cmd,'r');
+        $process = proc_open($cmd, $descriptorspec, $pipes);
         if (is_resource($process)) {
 
-            $this->buildOutput = '';
-            while(!feof($process)) {
-                $this->buildOutput .= fgets($process);
+            while(!feof($pipes[1])) {
+                $this->buildOutput .= fgets($pipes[1]);
             }
+            fclose($pipes[1]);
 
-            $return_value = pclose($process);
+            $return_value = proc_close($process);
 
             file_put_contents($this->buildFileName, $this->buildOutput);
 
@@ -406,7 +444,7 @@ class PHP_Test {
                 // release build output mem if we aren't using it
                 unset($this->buildOutput);
             }
-            
+
         }
         else {
             // couldn't open compiler process
@@ -433,7 +471,9 @@ class PHP_Test {
         if ($this->interpetResult == self::RESULT_FAIL)
             $this->writeDiff(self::INTERPRETER);
 
-        echo ($this->interpetResult == self::RESULT_PASS) ? "PASS " : "FAIL ";
+        echo ($this->interpetResult == self::RESULT_PASS) ?
+                Control::colorMsg(Control::GREEN,"PASS ") :
+                Control::colorMsg(Control::RED,"FAIL ");
         
         // do compiled test
         if (defined('ROADSEND_PHP')) {
@@ -441,15 +481,19 @@ class PHP_Test {
             Control::flush();
             $this->doCompilerBuild();
             if ($this->compileResult != self::RESULT_BUILDFAIL) {
-                echo "OK    RUN: ";
+                Control::colorMsg(Control::GREEN,"OK");
+                echo "    RUN: ";
                 Control::flush();
                 $this->executeTest(self::COMPILER);
                 if ($this->compileResult == self::RESULT_FAIL)
                     $this->writeDiff(self::COMPILER);
-                echo ($this->compileResult == self::RESULT_PASS) ? "PASS " : "FAIL ";
+                echo ($this->compileResult == self::RESULT_PASS) ?
+                        Control::colorMsg(Control::GREEN,"PASS ") :
+                        Control::colorMsg(Control::RED,"FAIL ");
             }
             else {
-                echo "FAIL";
+                // build fail
+                Control::colorMsg(Control::RED,"FAIL ");
             }
         }
         
