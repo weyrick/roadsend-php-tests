@@ -11,10 +11,9 @@ failures: clean-output
 re-tests-i: clean-output
 	pcc -f ./dotest.php -- -d ./re-tests/ ./re-output
 
-re-tests-z: clean-output
-	php -f ./dotest.php -- -d ./re-tests/ ./re-output
-
 re-tests: dotest clean-output
+	# this sucks but we need it for compiled tests
+	cp `find ./re-tests/ -name "*.inc"` ./re-output
 	./dotest -d ./re-tests/ ./re-output
 
 zend-tests: dotest clean-output

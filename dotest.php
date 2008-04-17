@@ -281,7 +281,7 @@ class PHP_Test {
             print_r($this->sectionData);
             Control::bomb('no expect data');
         }
-        
+
         // work files
         $bName = Control::$outDir.basename($this->tptFileName, '.phpt');
         $this->testFileName = $bName.'.php';
@@ -362,12 +362,20 @@ class PHP_Test {
         if (!file_put_contents($outFileName, $output))
             Control::bomb("unable to write output file: ".$outFileName);
 
+        // get the correct expect data for this run
+        if (($type == self::COMPILER) && (isset($this->sectionData['COMPILER:'.$this->expectType]))) {
+            $expectData = $this->sectionData['COMPILER:'.$this->expectType];
+        }
+        else {
+            $expectData = $this->sectionData[$this->expectType];
+        }
+        
         // compare output
         if ($this->expectType != 'EXPECT')
-            $re_expect = trim($this->sectionData[$this->expectType]);
+            $re_expect = trim($expectData);
         switch ($this->expectType) {
             case 'EXPECT':
-                if ($output != trim($this->sectionData['EXPECT'])) {
+                if ($output != trim($expectData)) {
                     $result = self::RESULT_FAIL;
                 }
                 else {

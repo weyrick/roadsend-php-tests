@@ -19,3 +19,6 @@ foo(1, 2, 3);
 Warning: Not enough arguments for function foo: 1 required, 0 provided in %s on line %d
 NULL
 int(1)
+--COMPILER:EXPECTF--
+NULL
+int(1)
