@@ -166,476 +166,476 @@ foreach ($a as $f) {
 float(1.2)
 echo: 1.2
 printf(f): 1.200000
-printf(e): 1.200000e+0
+printf(e): 1.20000e+0
 float(1.23)
 echo: 1.23
 printf(f): 1.230000
-printf(e): 1.230000e+0
+printf(e): 1.23000e+0
 float(1.234)
 echo: 1.234
 printf(f): 1.234000
-printf(e): 1.234000e+0
+printf(e): 1.23400e+0
 float(1.2345)
 echo: 1.2345
 printf(f): 1.234500
-printf(e): 1.234500e+0
+printf(e): 1.23450e+0
 float(1.23456)
 echo: 1.23456
 printf(f): 1.234560
-printf(e): 1.234560e+0
+printf(e): 1.23456e+0
 float(1.234567)
 echo: 1.234567
 printf(f): 1.234567
-printf(e): 1.234567e+0
+printf(e): 1.23457e+0
 float(1.2345678)
 echo: 1.2345678
 printf(f): 1.234568
-printf(e): 1.234568e+0
+printf(e): 1.23457e+0
 float(1.23456789)
 echo: 1.23456789
 printf(f): 1.234568
-printf(e): 1.234568e+0
+printf(e): 1.23457e+0
 float(1.23456789)
 echo: 1.23456789
 printf(f): 1.234568
-printf(e): 1.234568e+0
+printf(e): 1.23457e+0
 float(1.2345678901)
 echo: 1.2345678901
 printf(f): 1.234568
-printf(e): 1.234568e+0
+printf(e): 1.23457e+0
 float(1.23456789012)
 echo: 1.23456789012
 printf(f): 1.234568
-printf(e): 1.234568e+0
+printf(e): 1.23457e+0
 float(1.23456789012)
 echo: 1.23456789012
 printf(f): 1.234568
-printf(e): 1.234568e+0
+printf(e): 1.23457e+0
 float(1.23456789012)
 echo: 1.23456789012
 printf(f): 1.234568
-printf(e): 1.234568e+0
+printf(e): 1.23457e+0
 float(1.23456789012)
 echo: 1.23456789012
 printf(f): 1.234568
-printf(e): 1.234568e+0
+printf(e): 1.23457e+0
 float(1.23456789012)
 echo: 1.23456789012
 printf(f): 1.234568
-printf(e): 1.234568e+0
+printf(e): 1.23457e+0
 float(1.23456789012)
 echo: 1.23456789012
 printf(f): 1.234568
-printf(e): 1.234568e+0
+printf(e): 1.23457e+0
 float(1.23456789012)
 echo: 1.23456789012
 printf(f): 1.234568
-printf(e): 1.234568e+0
+printf(e): 1.23457e+0
 float(1.23456789012)
 echo: 1.23456789012
 printf(f): 1.234568
-printf(e): 1.234568e+0
+printf(e): 1.23457e+0
 float(1.23456789012)
 echo: 1.23456789012
 printf(f): 1.234568
-printf(e): 1.234568e+0
+printf(e): 1.23457e+0
 float(12.2345678901)
 echo: 12.2345678901
 printf(f): 12.234568
-printf(e): 1.223457e+1
+printf(e): 1.22346e+1
 float(123.23456789)
 echo: 123.23456789
 printf(f): 123.234568
-printf(e): 1.232346e+2
+printf(e): 1.23235e+2
 float(1234.23456789)
 echo: 1234.23456789
 printf(f): 1234.234568
-printf(e): 1.234235e+3
+printf(e): 1.23423e+3
 float(12345.2345679)
 echo: 12345.2345679
 printf(f): 12345.234568
-printf(e): 1.234523e+4
+printf(e): 1.23452e+4
 float(123456.234568)
 echo: 123456.234568
 printf(f): 123456.234568
-printf(e): 1.234562e+5
+printf(e): 1.23456e+5
 float(1234567.23457)
 echo: 1234567.23457
 printf(f): 1234567.234568
-printf(e): 1.234567e+6
+printf(e): 1.23457e+6
 float(12345678.2346)
 echo: 12345678.2346
 printf(f): 12345678.234568
-printf(e): 1.234568e+7
+printf(e): 1.23457e+7
 float(1.3)
 echo: 1.3
 printf(f): 1.300000
-printf(e): 1.300000e+0
+printf(e): 1.30000e+0
 float(1.3)
 echo: 1.3
 printf(f): 1.300000
-printf(e): 1.300000e+0
+printf(e): 1.30000e+0
 float(1.3)
 echo: 1.3
 printf(f): 1.300000
-printf(e): 1.300000e+0
+printf(e): 1.30000e+0
 float(1.3)
 echo: 1.3
 printf(f): 1.300000
-printf(e): 1.300000e+0
+printf(e): 1.30000e+0
 float(1.3)
 echo: 1.3
 printf(f): 1.300000
-printf(e): 1.300000e+0
+printf(e): 1.30000e+0
 float(1.3)
 echo: 1.3
 printf(f): 1.300000
-printf(e): 1.300000e+0
+printf(e): 1.30000e+0
 float(1.3)
 echo: 1.3
 printf(f): 1.300000
-printf(e): 1.300000e+0
+printf(e): 1.30000e+0
 float(1.3)
 echo: 1.3
 printf(f): 1.300000
-printf(e): 1.300000e+0
+printf(e): 1.30000e+0
 float(1.3)
 echo: 1.3
 printf(f): 1.300000
-printf(e): 1.300000e+0
+printf(e): 1.30000e+0
 float(1.3)
 echo: 1.3
 printf(f): 1.300000
-printf(e): 1.300000e+0
+printf(e): 1.30000e+0
 float(1.3)
 echo: 1.3
 printf(f): 1.300000
-printf(e): 1.300000e+0
+printf(e): 1.30000e+0
 float(1.3)
 echo: 1.3
 printf(f): 1.300000
-printf(e): 1.300000e+0
+printf(e): 1.30000e+0
 float(1.3)
 echo: 1.3
 printf(f): 1.300000
-printf(e): 1.300000e+0
+printf(e): 1.30000e+0
 float(130)
 echo: 130
 printf(f): 130.000000
-printf(e): 1.300000e+2
+printf(e): 1.30000e+2
 float(1300)
 echo: 1300
 printf(f): 1300.000000
-printf(e): 1.300000e+3
+printf(e): 1.30000e+3
 float(13000)
 echo: 13000
 printf(f): 13000.000000
-printf(e): 1.300000e+4
+printf(e): 1.30000e+4
 float(130000)
 echo: 130000
 printf(f): 130000.000000
-printf(e): 1.300000e+5
-float(1300000)
+printf(e): 1.30000e+5
+float(1.3E+6)
 echo: 1300000
 printf(f): 1300000.000000
-printf(e): 1.300000e+6
-float(13000000)
+printf(e): 1.30000e+6
+float(1.3E+7)
 echo: 13000000
 printf(f): 13000000.000000
-printf(e): 1.300000e+7
-float(130000000)
+printf(e): 1.30000e+7
+float(1.3E+8)
 echo: 130000000
 printf(f): 130000000.000000
-printf(e): 1.300000e+8
-float(1300000000)
+printf(e): 1.30000e+8
+float(1.3E+9)
 echo: 1300000000
 printf(f): 1300000000.000000
-printf(e): 1.300000e+9
-float(13000000000)
+printf(e): 1.30000e+9
+float(1.3E+10)
 echo: 13000000000
 printf(f): 13000000000.000000
-printf(e): 1.300000e+10
-float(130000000000)
+printf(e): 1.30000e+10
+float(1.3E+11)
 echo: 130000000000
 printf(f): 130000000000.000000
-printf(e): 1.300000e+11
+printf(e): 1.30000e+11
 float(1.3E+12)
 echo: 1.3E+12
 printf(f): 1300000000000.000000
-printf(e): 1.300000e+12
+printf(e): 1.30000e+12
 float(1)
 echo: 1
 printf(f): 1.000000
-printf(e): 1.000000e+0
+printf(e): 1.00000e+0
 float(12)
 echo: 12
 printf(f): 12.000000
-printf(e): 1.200000e+1
+printf(e): 1.20000e+1
 float(123)
 echo: 123
 printf(f): 123.000000
-printf(e): 1.230000e+2
+printf(e): 1.23000e+2
 float(1234)
 echo: 1234
 printf(f): 1234.000000
-printf(e): 1.234000e+3
+printf(e): 1.23400e+3
 float(12345)
 echo: 12345
 printf(f): 12345.000000
-printf(e): 1.234500e+4
+printf(e): 1.23450e+4
 float(123456)
 echo: 123456
 printf(f): 123456.000000
-printf(e): 1.234560e+5
+printf(e): 1.23456e+5
 float(1234567)
 echo: 1234567
 printf(f): 1234567.000000
-printf(e): 1.234567e+6
+printf(e): 1.23457e+6
 float(12345678)
 echo: 12345678
 printf(f): 12345678.000000
-printf(e): 1.234568e+7
+printf(e): 1.23457e+7
 float(123456789)
 echo: 123456789
 printf(f): 123456789.000000
-printf(e): 1.234568e+8
+printf(e): 1.23457e+8
 float(1234567890)
 echo: 1234567890
 printf(f): 1234567890.000000
-printf(e): 1.234568e+9
+printf(e): 1.23457e+9
 float(12345678901)
 echo: 12345678901
 printf(f): 12345678901.000000
-printf(e): 1.234568e+10
+printf(e): 1.23457e+10
 float(123456789012)
 echo: 123456789012
 printf(f): 123456789012.000000
-printf(e): 1.234568e+11
+printf(e): 1.23457e+11
 float(1235567890120)
-echo: 1235567890120
+echo: 1.23556789012E+12
 printf(f): 1235567890123.000000
-printf(e): 1.235568e+12
+printf(e): 1.23557e+12
 float(12345678901200)
-echo: 12345678901200
+echo: 1.23456789012E+13
 printf(f): 12345678901234.000000
-printf(e): 1.234568e+13
+printf(e): 1.23457e+13
 float(0.7)
 echo: 0.7
 printf(f): 0.700000
-printf(e): 7.000000e-1
+printf(e): 7.00000e-1
 float(0.07)
 echo: 0.07
 printf(f): 0.070000
-printf(e): 7.000000e-2
+printf(e): 7.00000e-2
 float(0.007)
 echo: 0.007
 printf(f): 0.007000
-printf(e): 7.000000e-3
+printf(e): 7.00000e-3
 float(0.0007)
 echo: 0.0007
 printf(f): 0.000700
-printf(e): 7.000000e-4
+printf(e): 7.00000e-4
 float(7.0E-5)
-echo: 7.0E-5
+echo: 7E-05
 printf(f): 0.000070
-printf(e): 7.000000e-5
+printf(e): 7.00000e-5
 float(7.0E-6)
-echo: 7.0E-6
+echo: 7E-06
 printf(f): 0.000007
-printf(e): 7.000000e-6
+printf(e): 7.00000e-6
 float(7.0E-7)
-echo: 7.0E-7
+echo: 7E-07
 printf(f): 0.000001
-printf(e): 7.000000e-7
+printf(e): 7.00000e-7
 float(7.0E-8)
-echo: 7.0E-8
+echo: 7E-08
 printf(f): 0.000000
-printf(e): 7.000000e-8
+printf(e): 7.00000e-8
 float(7.0E-9)
-echo: 7.0E-9
+echo: 7E-09
 printf(f): 0.000000
-printf(e): 7.000000e-9
+printf(e): 7.00000e-9
 float(7.0E-10)
-echo: 7.0E-10
+echo: 7E-10
 printf(f): 0.000000
-printf(e): 7.000000e-10
+printf(e): 7.00000e-10
 float(7.0E-11)
-echo: 7.0E-11
+echo: 7E-11
 printf(f): 0.000000
-printf(e): 7.000000e-11
+printf(e): 7.00000e-11
 float(7.0E-12)
-echo: 7.0E-12
+echo: 7E-12
 printf(f): 0.000000
-printf(e): 7.000000e-12
+printf(e): 7.00000e-12
 float(7.0E-13)
-echo: 7.0E-13
+echo: 7E-13
 printf(f): 0.000000
-printf(e): 7.000000e-13
+printf(e): 7.00000e-13
 float(-0.7)
 echo: -0.7
 printf(f): -0.700000
-printf(e): -7.000000e-1
+printf(e): -7.00000e-1
 float(-0.07)
 echo: -0.07
 printf(f): -0.070000
-printf(e): -7.000000e-2
+printf(e): -7.00000e-2
 float(-0.007)
 echo: -0.007
 printf(f): -0.007000
-printf(e): -7.000000e-3
+printf(e): -7.00000e-3
 float(-0.0007)
 echo: -0.0007
 printf(f): -0.000700
-printf(e): -7.000000e-4
+printf(e): -7.00000e-4
 float(-7.0E-5)
-echo: -7.0E-5
+echo: -7E-05
 printf(f): -0.000070
-printf(e): -7.000000e-5
+printf(e): -7.00000e-5
 float(-7.0E-6)
-echo: -7.0E-6
+echo: -7E-06
 printf(f): -0.000007
-printf(e): -7.000000e-6
+printf(e): -7.00000e-6
 float(-7.0E-7)
-echo: -7.0E-7
+echo: -7E-07
 printf(f): -0.000001
-printf(e): -7.000000e-7
+printf(e): -7.00000e-7
 float(-7.0E-8)
-echo: -7.0E-8
+echo: -7E-08
 printf(f): -0.000000
-printf(e): -7.000000e-8
+printf(e): -7.00000e-8
 float(-7.0E-9)
-echo: -7.0E-9
+echo: -7E-09
 printf(f): -0.000000
-printf(e): -7.000000e-9
+printf(e): -7.00000e-9
 float(-7.0E-10)
-echo: -7.0E-10
+echo: -7E-10
 printf(f): -0.000000
-printf(e): -7.000000e-10
+printf(e): -7.00000e-10
 float(-7.0E-11)
-echo: -7.0E-11
+echo: -7E-11
 printf(f): -0.000000
-printf(e): -7.000000e-11
+printf(e): -7.00000e-11
 float(-7.0E-12)
-echo: -7.0E-12
+echo: -7E-12
 printf(f): -0.000000
-printf(e): -7.000000e-12
+printf(e): -7.00000e-12
 float(-7.0E-13)
-echo: -7.0E-13
+echo: -7E-13
 printf(f): -0.000000
-printf(e): -7.000000e-13
+printf(e): -7.00000e-13
 float(-30)
 echo: -30
 printf(f): -30.000000
-printf(e): -3.000000e+1
+printf(e): -3.00000e+1
 float(-300)
 echo: -300
 printf(f): -300.000000
-printf(e): -3.000000e+2
+printf(e): -3.00000e+2
 float(-3000)
 echo: -3000
 printf(f): -3000.000000
-printf(e): -3.000000e+3
+printf(e): -3.00000e+3
 float(-30000)
 echo: -30000
 printf(f): -30000.000000
-printf(e): -3.000000e+4
-float(-300000)
+printf(e): -3.00000e+4
+float(-3.0E+5)
 echo: -300000
 printf(f): -300000.000000
-printf(e): -3.000000e+5
-float(-3000000)
+printf(e): -3.00000e+5
+float(-3.0E+6)
 echo: -3000000
 printf(f): -3000000.000000
-printf(e): -3.000000e+6
-float(-30000000)
+printf(e): -3.00000e+6
+float(-3.0E+7)
 echo: -30000000
 printf(f): -30000000.000000
-printf(e): -3.000000e+7
-float(-300000000)
+printf(e): -3.00000e+7
+float(-3.0E+8)
 echo: -300000000
 printf(f): -300000000.000000
-printf(e): -3.000000e+8
-float(-3000000000)
+printf(e): -3.00000e+8
+float(-3.0E+9)
 echo: -3000000000
 printf(f): -3000000000.000000
-printf(e): -3.000000e+9
-float(-30000000000)
+printf(e): -3.00000e+9
+float(-3.0E+10)
 echo: -30000000000
 printf(f): -30000000000.000000
-printf(e): -3.000000e+10
-float(-300000000000)
+printf(e): -3.00000e+10
+float(-3.0E+11)
 echo: -300000000000
 printf(f): -300000000000.000000
-printf(e): -3.000000e+11
+printf(e): -3.00000e+11
 float(-3.0E+12)
-echo: -3.0E+12
+echo: -3E+12
 printf(f): -3000000000000.000000
-printf(e): -3.000000e+12
+printf(e): -3.00000e+12
 float(1230)
 echo: 1230
 printf(f): 1230.000000
-printf(e): 1.230000e+3
+printf(e): 1.23000e+3
 float(12300)
 echo: 12300
 printf(f): 12300.000000
-printf(e): 1.230000e+4
+printf(e): 1.23000e+4
 float(123000)
 echo: 123000
 printf(f): 123000.000000
-printf(e): 1.230000e+5
+printf(e): 1.23000e+5
 float(1230000)
 echo: 1230000
 printf(f): 1230000.000000
-printf(e): 1.230000e+6
+printf(e): 1.23000e+6
 float(1.23E+7)
-echo: 1.23E+7
+echo: 12300000
 printf(f): 12300000.000000
-printf(e): 1.230000e+7
+printf(e): 1.23000e+7
 float(1.23E+8)
-echo: 1.23E+8
+echo: 123000000
 printf(f): 123000000.000000
-printf(e): 1.230000e+8
+printf(e): 1.23000e+8
 float(1.23E+9)
-echo: 1.23E+9
+echo: 1230000000
 printf(f): 1230000000.000000
-printf(e): 1.230000e+9
+printf(e): 1.23000e+9
 float(1.23E+10)
-echo: 1.23E+10
+echo: 12300000000
 printf(f): 12300000000.000000
-printf(e): 1.230000e+10
+printf(e): 1.23000e+10
 float(1.23E+11)
-echo: 1.23E+11
+echo: 123000000000
 printf(f): 123000000000.000000
-printf(e): 1.230000e+11
+printf(e): 1.23000e+11
 float(1.23E+12)
 echo: 1.23E+12
 printf(f): 1230000000000.000000
-printf(e): 1.230000e+12
+printf(e): 1.23000e+12
 float(1.23E+13)
 echo: 1.23E+13
 printf(f): 12300000000000.000000
-printf(e): 1.230000e+13
+printf(e): 1.23000e+13
 float(1.23E+14)
 echo: 1.23E+14
 printf(f): 123000000000000.000000
-printf(e): 1.230000e+14
+printf(e): 1.23000e+14
 float(1.234E+14)
 echo: 1.234E+14
 printf(f): 123400000000000.000000
-printf(e): 1.234000e+14
+printf(e): 1.23400e+14
 float(1.23E+15)
 echo: 1.23E+15
 printf(f): 1230000000000000.000000
-printf(e): 1.230000e+15
+printf(e): 1.23000e+15
 float(1.23E+16)
 echo: 1.23E+16
 printf(f): 12300000000000000.000000
-printf(e): 1.230000e+16
+printf(e): 1.23000e+16
 float(1.23E+17)
 echo: 1.23E+17
 printf(f): 123000000000000000.000000
-printf(e): 1.230000e+17
+printf(e): 1.23000e+17
 int(1000000000000)
 echo: 1000000000000
 printf(f): 1000000000000.000000
-printf(e): 1.000000e+12
+printf(e): 1.00000e+12
