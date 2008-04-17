@@ -1,5 +1,8 @@
 --TEST--
 /home/weyrick/pcc/bugs/tests/bug-id-0000692.php (converted from Roadsend suite)
+--KNOWNFAILURE--
+fails because of the order of declaration of classes and define statements.
+see trac ticket #3516
 --FILE--
 constant as default argument for function parameter
 

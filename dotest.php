@@ -22,7 +22,7 @@
 /**
  * This is a test suite program designed to be compatible with Zend .phpt test
  * template files. It supports features that are specific to Roadsend PHP, but should
- * also be compatible with Zend PHP
+ * also be "mostly" compatible with Zend PHP
  */
 
 class Control {
@@ -168,6 +168,8 @@ class TestSuite {
             echo "------------- INTERPRETER FAILURES -------------\n";
             foreach ($iFail as $testH) {
                 echo "{$testH->tptFileName}\n";
+                if (isset($testH->sectionData['KNOWNFAILURE']))
+                    echo "--- KNOWN FAILURE:\n".$testH->sectionData['KNOWNFAILURE']."---\n";
                 if (Control::$singleMode)
                     echo $testH->iDiffOutput;
             }
@@ -223,7 +225,7 @@ class PHP_Test {
     protected $expectType = 'EXPECT';
     
     protected $templateData;
-    protected $sectionData;
+    public $sectionData;
     
     public $compileResult = self::RESULT_UNKNOWN;
     public $interpetResult = self::RESULT_UNKNOWN;

@@ -1,5 +1,9 @@
 --TEST--
 /home/weyrick/pcc/tests/destructors.php (converted from Roadsend suite)
+--KNOWNFAILURE--
+fails because we implement destructors with GC finalization, which means
+the destructor fires when the object is collected, and not necessarily
+right when there are no references to it (as zend)
 --FILE--
 <?php
 class MyDestructableClass {
