@@ -52,3 +52,6 @@ int(1)
 Warning: func_num_args():  Called from the global scope - no function context in %s on line %d
 int(-1)
 Done
+--COMPILER:BUILDFAILEXPECTF--
+%a
+Error: func_num_args won't work in global scope in %s on line %d

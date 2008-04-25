@@ -157,10 +157,12 @@ class TestSuite {
 
     public function showResults() {
         foreach ($this->testList as $testH) {
-            if ($testH->interpetResult == PHP_Test::RESULT_FAIL)
+            if ($testH->interpretResult == PHP_Test::RESULT_FAIL)
                 $iFail[] = $testH;
             if ($testH->compileResult == PHP_Test::RESULT_BUILDFAIL)
                 $bFail[] = $testH;
+            if ($testH->compileResult == PHP_Test::RESULT_BUILDFAIL_FAIL)
+                $bFailFail[] = $testH;
             if ($testH->compileResult == PHP_Test::RESULT_FAIL)
                 $cFail[] = $testH;
         }
@@ -178,8 +180,20 @@ class TestSuite {
             echo "------------- BUILD FAILURES -------------\n";
             foreach ($bFail as $testH) {
                 echo "{$testH->tptFileName}\n";
-                if (Control::$singleMode)
+                if (Control::$singleMode) {
                     echo $testH->buildOutput;
+                    echo file_get_contents($testH->buildErrFileName);
+                }
+            }
+        }
+        if (sizeof($bFailFail)) {
+            echo "------------- EXPECTED BUILD FAIL FAILURES -------------\n";
+            foreach ($bFailFail as $testH) {
+                echo "{$testH->tptFileName}\n";
+                if (Control::$singleMode) {
+                    echo $testH->buildOutput;
+                    echo file_get_contents($testH->buildErrFileName);
+                }
             }
         }
         if (sizeof($cFail)) {
@@ -190,7 +204,7 @@ class TestSuite {
                     echo $testH->cDiffOutput;
             }
         }
-        if (empty($iFail)&&empty($bFail)&&empty($cFail))
+        if (empty($iFail)&&empty($bFail)&&empty($bFailFail)&&empty($cFail))
             echo "---- ALL TESTS PASSED ----\n";
     }
 
@@ -203,6 +217,8 @@ class PHP_Test {
     const RESULT_SKIP = 2;
     const RESULT_BUILDFAIL = 3;
     const RESULT_UNKNOWN = 4;
+    const RESULT_BUILDFAIL_PASS = 5; // we expected the compiler build to fail, and it did
+    const RESULT_BUILDFAIL_FAIL = 6; // we expected the compiler build to fail, but it passed
 
     const INTERPRETER = 0;
     const COMPILER = 1;
@@ -228,7 +244,7 @@ class PHP_Test {
     public $sectionData;
     
     public $compileResult = self::RESULT_UNKNOWN;
-    public $interpetResult = self::RESULT_UNKNOWN;
+    public $interpretResult = self::RESULT_UNKNOWN;
     
     public function __construct($fName) {
         Control::log(2,'adding test: '.$fName);
@@ -327,7 +343,7 @@ class PHP_Test {
             // setup output vars
             $output =& $this->iOutput;
             $outFileName =& $this->ioutFileName;
-            $result =& $this->interpetResult;
+            $result =& $this->interpretResult;
             $errFileName =& $this->ierrFileName;
         }
         else {
@@ -371,9 +387,19 @@ class PHP_Test {
         else {
             $expectData = $this->sectionData[$this->expectType];
         }
+
+        $result = $this->compareOutput($this->expectType, $expectData, $output);
+        if ($type == self::INTERPRETER)
+            $this->interpretResult = $result;
+        else
+            $this->compileResult = $result;
         
+    }
+
+    protected function compareOutput($expectType, $expectData, $output) {
+    
         // compare output
-        if ($this->expectType != 'EXPECT')
+        if ($expectType != 'EXPECT')
             $re_expect = trim($expectData);
         switch ($this->expectType) {
             case 'EXPECT':
@@ -404,9 +430,11 @@ class PHP_Test {
                 }
                 break;
         }
+
+        return $result;
         
     }
-
+    
     protected function writeDiff($type) {
 
         if ($type == self::INTERPRETER) {
@@ -447,12 +475,35 @@ class PHP_Test {
 
             file_put_contents($this->buildFileName, $this->buildOutput);
 
-            if ($return_value != 0) {
-                $this->compileResult = self::RESULT_BUILDFAIL;
+            // if we have a COMPILER:BUILDFAILEXPECTF, make sure we failed
+            if (isset($this->sectionData['COMPILER:BUILDFAILEXPECTF'])) {
+                // we expect the build to fail
+                if ($return_value == 0) {
+                    // woops, we built ok
+                    Control::log(2,'expected test not to build, but it did anyway');
+                    $this->compileResult = self::RESULT_BUILDFAIL_FAIL;
+                }
+                else {
+                    // we did fail, but did our fail output match?
+                    Control::log(2,'expected test not to build, and it didn\'t');
+                    $result = $this->compareOutput('EXPECTF',$this->sectionData['COMPILER:BUILDFAILEXPECTF'],trim(file_get_contents($this->buildErrFileName)));
+                    if ($result == self::RESULT_PASS)
+                        $this->compileResult = self::RESULT_BUILDFAIL_PASS;
+                    else
+                        $this->compileResult = self::RESULT_BUILDFAIL_FAIL;
+                }
             }
             else {
-                // release build output mem if we aren't using it
-                unset($this->buildOutput);
+
+                // we expect the build to succeed
+                if ($return_value != 0) {
+                    $this->compileResult = self::RESULT_BUILDFAIL;
+                }
+                else {
+                    // release build output mem if we aren't using it
+                    unset($this->buildOutput);
+                }
+                
             }
 
         }
@@ -478,10 +529,10 @@ class PHP_Test {
         // do interpreter test
         $this->executeTest(self::INTERPRETER);
 
-        if ($this->interpetResult == self::RESULT_FAIL)
+        if ($this->interpretResult == self::RESULT_FAIL)
             $this->writeDiff(self::INTERPRETER);
 
-        echo ($this->interpetResult == self::RESULT_PASS) ?
+        echo ($this->interpretResult == self::RESULT_PASS) ?
                 Control::colorMsg(Control::GREEN,"PASS ") :
                 Control::colorMsg(Control::RED,"FAIL ");
         
@@ -490,7 +541,7 @@ class PHP_Test {
             echo "   BUILD: ";
             Control::flush();
             $this->doCompilerBuild();
-            if ($this->compileResult != self::RESULT_BUILDFAIL) {
+            if ($this->compileResult == self::RESULT_UNKNOWN) {
                 Control::colorMsg(Control::GREEN,"OK");
                 echo "    RUN: ";
                 Control::flush();
@@ -503,7 +554,10 @@ class PHP_Test {
             }
             else {
                 // build fail
-                Control::colorMsg(Control::RED,"FAIL ");
+                if ($this->compileResult == self::RESULT_BUILDFAIL_PASS)
+                    Control::colorMsg(Control::GREEN,"CONTROLLED FAIL");
+                else
+                    Control::colorMsg(Control::RED,"FAIL ");
             }
         }
         

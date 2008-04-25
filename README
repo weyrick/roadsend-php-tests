@@ -58,6 +58,16 @@ EXPECT sections
     EXPECTREGEX will use preg_match to match the entire contents of this section
     against the output
 
+    COMPILER SPECIFIC EXPECT SECTIONS
+    ---------------------------------
+
+  - BUILDFAILEXPECTF
+
+    This tells the test suite to expect this test to fail to build. This is needed
+    because some errors we want to catch at compile time, rather than run time.
+    It requires the COMPILER: prefix (described below). The section should contain
+    EXPECTF data that will be matched against the stderr output from the build process.
+
     SPECIAL EXPECT MODIFIERS
     ------------------------
     In addition, the 3 expect sections above may appear with a prefix or suffix
