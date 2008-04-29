@@ -1,5 +1,7 @@
 --TEST--
 /home/weyrick/pcc/bugs/tests/bug-id-0001217.php (converted from Roadsend suite)
+--KNOWNFAILURE--
+var-compare differences. see trac #3517
 --FILE--
 <?
 

@@ -1,5 +1,7 @@
 --TEST--
 /home/weyrick/pcc/bugs/tests/bug-id-0003091.php (converted from Roadsend suite)
+--KNOWNFAILURE--
+casting of a file handle. see trac #3518
 --FILE--
 test comparison of resources
 <?php

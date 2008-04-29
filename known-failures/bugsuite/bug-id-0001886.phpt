@@ -1,5 +1,7 @@
 --TEST--
 /home/weyrick/pcc/bugs/tests/bug-id-0001886.php (converted from Roadsend suite)
+--KNOWNFAILURE--
+reference assignment. see trac #3519
 --FILE--
 recursive references
 <?

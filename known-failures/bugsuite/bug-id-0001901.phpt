@@ -1,5 +1,7 @@
 --TEST--
 /home/weyrick/pcc/bugs/tests/bug-id-0001901.php (converted from Roadsend suite)
+--KNOWNFAILURE--
+reference assignment. see trac #3519
 --FILE--
 methods can modify their $this, so it must have any pending copies 
 forced on it for the method call.  This tests for that, in an 
