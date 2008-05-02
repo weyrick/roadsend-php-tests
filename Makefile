@@ -17,6 +17,8 @@ re-tests: dotest clean-output
 	./dotest -d ./re-tests/ ./re-output
 
 zend-tests: dotest clean-output
+	# this sucks but we need it for compiled tests
+	cp `find ./zend-tests/ -name "*.inc"` ./zend-output
 	./dotest -d ./zend-tests/ ./zend-output
 
 dotest: dotest.php
