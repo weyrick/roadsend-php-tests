@@ -18,6 +18,12 @@ foocrement($foo);
 
 echo "$foo\n";
 
+// test a return by ref function, which has no explicit return
+function &retbyref() {
+    $a = 5;
+}
+retbyref();
+
 ?>
 --EXPECT--
 5foocrement
