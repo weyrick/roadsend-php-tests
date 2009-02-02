@@ -74,6 +74,9 @@ class B extends A {
 
 B::callFoo();
 
+$name = 'callFoo';
+B::$name();
+
 ?>
 
 --EXPECT--
@@ -103,4 +106,4 @@ object(bclass)#1 (2) {
   string(20) "the current instance"
 }
 /in amethod()
-A::foo()
+A::foo()A::foo()
